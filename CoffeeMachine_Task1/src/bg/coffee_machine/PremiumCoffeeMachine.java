@@ -12,15 +12,32 @@ public class PremiumCoffeeMachine implements CoffeeMachine {
     @Override
     public Product brew(Beverage beverage) {
         if(beverage instanceof Espresso)
-            if(container.enoughEspresso())
+            if(container.enoughEspresso()){
+                orderEspresso();
                 return new Product(beverage, "Premium");
-            else { refill();}
+            }
+            else if(autoRefill){
+                refill();
+                orderEspresso();
+            }
         if(beverage instanceof Cappuccino)
-            if(container.enoughCappuccino())
+            if(container.enoughCappuccino()) {
+                orderCappuccino();
                 return new Product(beverage, "Premium");
+            }
+            else if(autoRefill){
+                refill();
+                orderCappuccino();
+            }
         if(beverage instanceof Mochaccino)
-            if(container.enoughMochaccino())
+            if(container.enoughMochaccino()){
+                orderMochaccino();
                 return new Product(beverage, "Premium");
+            }
+            else if(autoRefill){
+                refill();
+                orderMochaccino();
+            }
         return null;
     }
 
@@ -39,16 +56,16 @@ public class PremiumCoffeeMachine implements CoffeeMachine {
     }
 
     private void orderEspresso() {
-        container.setCoffee(container.getCoffee()- 10);
-        container.setWater(container.getWater()- 10);
+        container.setCoffee(container.getCurrentCoffee()- 10);
+        container.setWater(container.getCurrentWater()- 30);
     }
     private void orderMochaccino() {
-        container.setCoffee(container.getCoffee()-18);
-        container.setMilk(container.getMilk()-150);
-        container.setCacao(container.getCacao()-10);
+        container.setCoffee(container.getCurrentCoffee()-18);
+        container.setMilk(container.getCurrentMilk()-150);
+        container.setCacao(container.getCurrentCacao()-10);
     }
     private void orderCappuccino() {
-        container.setCoffee(container.getCoffee()-18);
-        container.setMilk(container.getMilk()-150);
+        container.setCoffee(container.getCurrentCoffee()-18);
+        container.setMilk(container.getCurrentMilk()-150);
     }
 }

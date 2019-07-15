@@ -13,7 +13,7 @@ public abstract class Container {
         this.cacao = cacao;
     }
 
-    public double getCoffee() {
+    public double getCurrentCoffee() {
         return coffee;
     }
 
@@ -21,7 +21,7 @@ public abstract class Container {
         this.coffee = coffee;
     }
 
-    public double getMilk() {
+    public double getCurrentMilk() {
         return milk;
     }
 
@@ -29,7 +29,7 @@ public abstract class Container {
         this.milk = milk;
     }
 
-    public double getWater() {
+    public double getCurrentWater() {
         return water;
     }
 
@@ -37,7 +37,7 @@ public abstract class Container {
         this.water = water;
     }
 
-    public double getCacao() {
+    public double getCurrentCacao() {
         return cacao;
     }
 
@@ -46,7 +46,7 @@ public abstract class Container {
     }
 
     public boolean enoughEspresso(){
-        if(getCoffee() >= 10 && getWater() >= 30 ) return true;
+        if(getCurrentCoffee() >= 10 && getCurrentWater() >= 30 ) return true;
         else return false;
     }
 }

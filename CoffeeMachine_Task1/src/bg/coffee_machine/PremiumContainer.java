@@ -7,11 +7,11 @@ public class PremiumContainer extends Container {
     }
     public boolean enoughCappuccino(){
         // Maybe a function for->
-        if(getCoffee() >= 18 && getMilk() >= 150 ) return true;
+        if(getCurrentCoffee() >= 18 && getCurrentMilk() >= 150 ) return true;
         else return false;
     }
     public boolean enoughMochaccino(){
-        if(getCoffee() >= 18 && getMilk() >= 150 && getCacao() >= 10) return true;
+        if(getCurrentCoffee() >= 18 && getCurrentMilk() >= 150 && getCurrentCacao() >= 10) return true;
         else return false;
     }
 }

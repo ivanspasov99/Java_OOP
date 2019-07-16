@@ -1,9 +1,9 @@
 package bg.coffee_machine;
 
 public class Espresso implements Beverage{
-    private final String name = "Espresso";
-    private final double coffee = 10;
-    private final double water = 10;
+    private static final String name = "Espresso";
+    private static final double coffee = 10;
+    private static final double water = 30;
 
     @Override
     public String getName() {

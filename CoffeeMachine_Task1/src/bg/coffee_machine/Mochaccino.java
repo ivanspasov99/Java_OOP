@@ -1,10 +1,10 @@
 package bg.coffee_machine;
 
 public class Mochaccino implements  Beverage {
-    private final String name = "Mochaccino";
-    private final double coffee = 18;
-    private final double milk = 150;
-    private final double cacao = 10;
+    private static final String name = "Mochaccino";
+    private static final double coffee = 18;
+    private static final double milk = 150;
+    private static final double cacao = 10;
 
     @Override
     public String getName() {

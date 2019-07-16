@@ -31,11 +31,13 @@ public class Hero extends ActorAbstract{
 
     // functions for checking if the weapon is weaker??
     public void equip(Weapon weapon){
-       if(this.weapon.getDamage() < weapon.getDamage()) this.weapon = weapon;
+        if(this.weapon != null) {
+            if(this.weapon.getDamage() < weapon.getDamage()) this.weapon = weapon;
+        }
     }
     public void learn(Spell spell) {
-        if(this.spell.getDamage() < spell.getDamage()) this.spell = spell;
+        if(this.spell != null) {
+            if (this.spell.getDamage() < spell.getDamage()) this.spell = spell;
+        }
     }
-
-    // attack not implemented in Abstract
 }

@@ -17,6 +17,11 @@ public abstract class ActorAbstract implements Actor{
     public boolean isAlive() {if(health > 0) return true; else return false; }
     public void takeDamage(int damagePoints) { if(damagePoints >= health) health = 0; else health-=damagePoints; }
     public int attack() {
-        return 0;
+        int attack = 0;
+        if(weapon != null)
+            attack+=weapon.getDamage();
+        if(spell != null && mana > spell.getManaCost())
+            attack+=spell.getDamage();
+        return attack;
     }
 }

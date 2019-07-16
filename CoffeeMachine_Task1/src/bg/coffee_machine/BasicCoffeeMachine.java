@@ -2,7 +2,6 @@ package bg.coffee_machine;
 
 public class BasicCoffeeMachine implements CoffeeMachine{
     private BasicContainer container;
-    private final String[] allowedLucks = {};
 
     public BasicCoffeeMachine() {
         this.container = new BasicContainer();
@@ -13,7 +12,7 @@ public class BasicCoffeeMachine implements CoffeeMachine{
         if(beverage instanceof Espresso)
             if(enoughEspresso(beverage)) {
                 decreaseSuppliesForEspresso(beverage);
-                return new Product(beverage, allowedLucks);
+                return new Product(beverage, null);
             }
         return null;
     }
@@ -29,10 +28,7 @@ public class BasicCoffeeMachine implements CoffeeMachine{
         this.container.setWater(600);
     }
     public boolean enoughEspresso(Beverage beverage){
-        if(container.getCurrentCoffee() >= beverage.getCoffee() && container.getCurrentWater() >= beverage.getWater() )
-            return true;
-        else
-            return false;
+        return container.getCurrentCoffee() >= beverage.getCoffee() && container.getCurrentWater() >= beverage.getWater();
     }
 
     private void decreaseSuppliesForEspresso(Beverage beverage) {

@@ -3,7 +3,8 @@ package bg.coffee_machine;
 public class PremiumCoffeeMachine implements CoffeeMachine {
     private PremiumContainer container;
     private boolean autoRefill = false;
-    private final String[] allowedLucks = {
+    private static int luckCounter = 0;
+    private final String[] Lucks = {
             "If at first you don't succeed call it version 1.0.",
             "Today you will make magic happen!",
             "Have you tried turning it off and on again?",
@@ -20,29 +21,38 @@ public class PremiumCoffeeMachine implements CoffeeMachine {
         if(beverage instanceof Espresso)
             if(enoughEspresso(beverage)){
                 decreaseSuppliesForEspresso(beverage);
-                return new Product(beverage, allowedLucks);
+                incrementLuckCounter();
+                return new Product(beverage, Lucks[luckCounter]);
             }
             else if(autoRefill){
                 refill();
                 decreaseSuppliesForEspresso(beverage);
+                incrementLuckCounter();
+                return new Product(beverage, Lucks[luckCounter]);
             }
         if(beverage instanceof Cappuccino)
             if(enoughCappuccino(beverage)) {
                 decreaseSuppliesForCappuccino(beverage);
-                return new Product(beverage, allowedLucks);
+                incrementLuckCounter();
+                return new Product(beverage, Lucks[luckCounter]);
             }
             else if(autoRefill){
                 refill();
                 decreaseSuppliesForCappuccino(beverage);
+                incrementLuckCounter();
+                return new Product(beverage, Lucks[luckCounter]);
             }
         if(beverage instanceof Mochaccino)
             if(enoughMochaccino(beverage)){
                 decreaseSuppliesForMochaccino(beverage);
-                return new Product(beverage, allowedLucks);
+                incrementLuckCounter();
+                return new Product(beverage, Lucks[luckCounter]);
             }
             else if(autoRefill){
                 refill();
                 decreaseSuppliesForMochaccino(beverage);
+                incrementLuckCounter();
+                return new Product(beverage, Lucks[luckCounter]);
             }
         return null;
     }
@@ -95,5 +105,11 @@ public class PremiumCoffeeMachine implements CoffeeMachine {
     private void decreaseSuppliesForCappuccino(Beverage beverage) {
         container.setCoffee(container.getCurrentCoffee() - beverage.getCoffee());
         container.setMilk(container.getCurrentMilk() - beverage.getMilk());
+    }
+
+
+    private void incrementLuckCounter(){
+        if(luckCounter != 3) luckCounter++;
+        else luckCounter = 0;
     }
 }

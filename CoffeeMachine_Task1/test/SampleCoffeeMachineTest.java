@@ -1,6 +1,8 @@
 import static org.junit.Assert.assertEquals;
 
-import bg.coffee_machine.*;
+import bg.fmi.mjt.lab.coffee_machine.*;
+import bg.fmi.mjt.lab.coffee_machine.supplies.*;
+import bg.fmi.mjt.lab.coffee_machine.container.*;
 import org.junit.Before;
 import org.junit.Test;
 

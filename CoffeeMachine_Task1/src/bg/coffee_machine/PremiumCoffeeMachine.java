@@ -3,7 +3,7 @@ package bg.coffee_machine;
 public class PremiumCoffeeMachine implements CoffeeMachine {
     private PremiumContainer container;
     private boolean autoRefill = false;
-    private static int luckCounter = 0;
+    private int luckCounter = -1;
     private final String[] Lucks = {
             "If at first you don't succeed call it version 1.0.",
             "Today you will make magic happen!",
@@ -18,43 +18,18 @@ public class PremiumCoffeeMachine implements CoffeeMachine {
 
     @Override
     public Product brew(Beverage beverage) {
-        if(beverage instanceof Espresso)
-            if(enoughEspresso(beverage)){
-                decreaseSuppliesForEspresso(beverage);
+
+        int flag = (enoughSupplies(beverage)) ? 1 : 0;
+        switch (flag) {
+            case 0: { if(autoRefill) refill(); else return null; }
+            case 1: {
+                decreaseSupplies(beverage);
                 incrementLuckCounter();
+                System.out.println(luckCounter);
                 return new Product(beverage, Lucks[luckCounter]);
             }
-            else if(autoRefill){
-                refill();
-                decreaseSuppliesForEspresso(beverage);
-                incrementLuckCounter();
-                return new Product(beverage, Lucks[luckCounter]);
-            }
-        if(beverage instanceof Cappuccino)
-            if(enoughCappuccino(beverage)) {
-                decreaseSuppliesForCappuccino(beverage);
-                incrementLuckCounter();
-                return new Product(beverage, Lucks[luckCounter]);
-            }
-            else if(autoRefill){
-                refill();
-                decreaseSuppliesForCappuccino(beverage);
-                incrementLuckCounter();
-                return new Product(beverage, Lucks[luckCounter]);
-            }
-        if(beverage instanceof Mochaccino)
-            if(enoughMochaccino(beverage)){
-                decreaseSuppliesForMochaccino(beverage);
-                incrementLuckCounter();
-                return new Product(beverage, Lucks[luckCounter]);
-            }
-            else if(autoRefill){
-                refill();
-                decreaseSuppliesForMochaccino(beverage);
-                incrementLuckCounter();
-                return new Product(beverage, Lucks[luckCounter]);
-            }
-        return null;
+            default: return null; // cannot be accessed!!!
+        }
     }
 
     @Override
@@ -70,46 +45,22 @@ public class PremiumCoffeeMachine implements CoffeeMachine {
         this.container.setWater(1000);
     }
 
-    public boolean enoughEspresso(Beverage beverage){
-        if(container.getCurrentCoffee() >= beverage.getCoffee() && container.getCurrentWater() >= beverage.getWater() )
-            return true;
-        else
-            return false;
-    }
-    public boolean enoughCappuccino(Beverage beverage){
 
-        if(container.getCurrentCoffee() >= beverage.getCoffee() && container.getCurrentMilk() >= beverage.getMilk() )
-            return true;
-        else
-            return false;
-    }
-    public boolean enoughMochaccino(Beverage beverage){
-        if(container.getCurrentCoffee() >= beverage.getCoffee()
+    private boolean enoughSupplies(Beverage beverage){
+        return container.getCurrentWater() >= beverage.getWater()
+                && container.getCurrentCacao() >= beverage.getCacao()
                 && container.getCurrentMilk() >= beverage.getMilk()
-                && container.getCurrentCacao() >= beverage.getCacao())
-            return true;
-        else
-            return false;
+                && container.getCurrentCoffee() >= beverage.getCoffee();
     }
-
-
-    private void decreaseSuppliesForEspresso(Beverage beverage) {
-        container.setCoffee(container.getCurrentCoffee() - beverage.getCoffee());
-        container.setWater(container.getCurrentWater()- beverage.getWater());
-    }
-    private void decreaseSuppliesForMochaccino(Beverage beverage) {
+    private void decreaseSupplies(Beverage beverage) {
         container.setCoffee(container.getCurrentCoffee() - beverage.getCoffee());
         container.setMilk(container.getCurrentMilk() - beverage.getMilk());
         container.setCacao(container.getCurrentCacao() - beverage.getCacao());
+        container.setWater((container.getCurrentWater() - beverage.getWater()));
     }
-    private void decreaseSuppliesForCappuccino(Beverage beverage) {
-        container.setCoffee(container.getCurrentCoffee() - beverage.getCoffee());
-        container.setMilk(container.getCurrentMilk() - beverage.getMilk());
-    }
-
 
     private void incrementLuckCounter(){
         if(luckCounter != 3) luckCounter++;
-        else luckCounter = 0;
+        else luckCounter = -1;
     }
 }

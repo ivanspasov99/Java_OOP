@@ -10,8 +10,8 @@ public class BasicCoffeeMachine implements CoffeeMachine{
     @Override
     public Product brew(Beverage beverage) {
         if(beverage instanceof Espresso)
-            if(enoughEspresso(beverage)) {
-                decreaseSuppliesForEspresso(beverage);
+            if(enoughSupplies(beverage)) {
+                decreaseSupplies(beverage);
                 return new Product(beverage, null);
             }
         return null;
@@ -27,13 +27,15 @@ public class BasicCoffeeMachine implements CoffeeMachine{
         this.container.setCoffee(600);
         this.container.setWater(600);
     }
-    public boolean enoughEspresso(Beverage beverage){
-        return container.getCurrentCoffee() >= beverage.getCoffee() && container.getCurrentWater() >= beverage.getWater();
-    }
 
-    private void decreaseSuppliesForEspresso(Beverage beverage) {
+    private boolean enoughSupplies(Beverage beverage){
+        return container.getCurrentWater() >= beverage.getWater()
+                && container.getCurrentCacao() >= beverage.getCacao()
+                && container.getCurrentMilk() >= beverage.getMilk()
+                && container.getCurrentCoffee() >= beverage.getCoffee();
+    }
+    private void decreaseSupplies(Beverage beverage) {
         container.setCoffee(container.getCurrentCoffee() - beverage.getCoffee());
-        container.setWater(container.getCurrentWater()- beverage.getWater());
+        container.setWater((container.getCurrentWater() - beverage.getWater()));
     }
-
 }

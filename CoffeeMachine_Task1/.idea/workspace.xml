@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c81564f4-7b16-4a24-b7c4-4749d32275e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/BaseCoffeeMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/BasicCoffeeMachine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/BasicContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/Beverage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/Cappuccino.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/CoffeeMachine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/Container.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/Espresso.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/Mochaccino.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/PremiumCoffeeMachine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/PremiumContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jetbrains/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jetbrains/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SampleCoffeeMachineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SampleCoffeeMachineTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="c81564f4-7b16-4a24-b7c4-4749d32275e5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,32 +13,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/jetbrains/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/CoffeeMachineTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#5988#5989#0" expanded="true" />
-                <element signature="e#6048#6049#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -138,22 +97,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="CoffeeMachine_Task1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CoffeeMachine_Task1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CoffeeMachine_Task1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CoffeeMachine_Task1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -161,7 +105,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Dungeons" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -270,14 +214,11 @@
       <workItem from="1563171743327" duration="3025000" />
       <workItem from="1563274685236" duration="3625000" />
       <workItem from="1563287754303" duration="3868000" />
-      <workItem from="1563346034391" duration="19196000" />
+      <workItem from="1563346034391" duration="19481000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="bg_fmi_mjt_lab_coffee_machine_in_CoffeeMachine_Task1 - 2019.07.17 at 10h 52m 40s.xml">
-      <configuration name="bg.fmi.mjt.lab.coffee_machine in CoffeeMachine_Task1" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SampleCoffeeMachineTest_(1) - 2019.07.17 at 10h 53m 03s.xml">
       <configuration name="SampleCoffeeMachineTest (1)" configurationId="JUnit" />
     </history-entry>
@@ -305,15 +246,17 @@
     <history-entry file="CoffeeMachineTest - 2019.07.17 at 15h 51m 29s.xml">
       <configuration name="CoffeeMachineTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CoffeeMachineTest_(1) - 2019.07.17 at 15h 54m 15s.xml">
+      <configuration name="CoffeeMachineTest (1)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43177000" />
+    <option name="totallyTimeSpent" value="43462000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26545843" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26545843" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -322,7 +265,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35861322" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35861322" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -411,12 +354,6 @@
           <line>22</line>
           <properties />
           <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/test/CoffeeMachineTest.java</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

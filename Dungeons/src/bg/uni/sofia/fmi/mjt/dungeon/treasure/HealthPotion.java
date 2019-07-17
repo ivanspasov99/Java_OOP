@@ -5,7 +5,7 @@ import bg.uni.sofia.fmi.mjt.dungeon.actor.Hero;
 public class HealthPotion implements Treasure {
     private int healingPoints;
     public HealthPotion(int healingPoints) {
-    this.healingPoints = healingPoints;
+        this.healingPoints = healingPoints;
     }
 
     @Override

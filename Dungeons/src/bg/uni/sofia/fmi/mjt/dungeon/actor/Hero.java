@@ -18,15 +18,18 @@ public class Hero extends ActorAbstract{
     // better to be boolean??
     public void takeHealing(int healingPoints){
         if(isAlive()){
-            if(healingPoints + this.health >= this.maxLife)
+            if(healingPoints + this.health >= this.maxLife) {
                 this.health = this.maxLife;
-            else this.health+=healingPoints;
+            }
+            this.health+=healingPoints;
         }
     }
     public void takeMana(int manaPoints){
-        if(manaPoints + this.mana >= this.maxMana)
+        if(manaPoints + this.mana >= this.maxMana) {
             this.mana = this.maxLife;
-        else this.mana+=manaPoints;
+        }
+        this.mana+=manaPoints;
+
     }
 
     // functions for checking if the weapon is weaker??
@@ -34,10 +37,12 @@ public class Hero extends ActorAbstract{
         if(this.weapon != null) {
             if(this.weapon.getDamage() < weapon.getDamage()) this.weapon = weapon;
         }
+        this.weapon = weapon;
     }
     public void learn(Spell spell) {
         if(this.spell != null) {
             if (this.spell.getDamage() < spell.getDamage()) this.spell = spell;
         }
+        this.spell = spell;
     }
 }

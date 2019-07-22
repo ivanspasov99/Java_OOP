@@ -3,8 +3,12 @@ import bg.uni.sofia.fmi.mjt.dungeon.actor.Hero;
 public class Weapon extends DamageComponent {
 
     public Weapon(String name, int damage) {
-        this.name = name;
+        super(name, damage);
         this.damage = damage;
+    }
+
+    public Weapon(Weapon other) {
+        super(other);
     }
 
     @Override

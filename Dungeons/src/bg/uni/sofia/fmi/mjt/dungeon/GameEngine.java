@@ -7,7 +7,7 @@ public class GameEngine {
     // enemy[] & treasuries[] must be equal as in map
     char[][] map;
     Hero hero;
-    Enemy[] enemies;
+    public Enemy[] enemies;
     private int enemyCounter = 0;
     Treasure[] treasures;
     private int treasureCounter = 0;
@@ -15,17 +15,22 @@ public class GameEngine {
 
     public GameEngine(char[][] map, Hero hero, Enemy[] enemies, Treasure[] treasures) {
         this.map = map.clone();
+        this.map = new char[map.length][];
         for (int i = 0; i < map.length; i++) {
-            map[i] = map[i].clone();
+            this.map[i] = new char[map[i].length];
+            for (int j = 0; j < map[i].length; j++) {
+                this.map[i][j] = map[i][j];
+            }
         }
-        this.hero = hero;
-        this.enemies = enemies;
-        this.treasures = treasures;
+        this.hero = new Hero(hero); // if we use copy const (game engine does not uses the submitted hero) not showing
+        this.enemies = enemies.clone();
+        setLocalArrayOfEnemies(enemies);
+        this.treasures = treasures.clone(); // same as above
         setPlayerPosition();
     }
 
     public char[][] getMap(){
-        return map.clone(); // better?????
+        return map;
     }
     public Hero getHero() { return hero; }
 
@@ -61,11 +66,9 @@ public class GameEngine {
         char temp = map[newPost.x][newPost.y];
         map[newPost.x][newPost.y] =  map[OldPosition.x][OldPosition.y];
         map[OldPosition.x][OldPosition.y] = temp;
+        position = new Position(newPost.x, newPost.y);
     }
 
-    private boolean checkSpecificSymbol(char mapSymbol, char symbol) {
-        return mapSymbol == symbol;
-    }
     private boolean inBorders(char[][] map, Position newPos) {
         return newPos.x >= 0 && newPos.x < map.length && newPos.y >= 0 && newPos.y < map[newPos.x].length;
     }
@@ -73,19 +76,19 @@ public class GameEngine {
         return map[newPos.x][newPos.y] == '#';
     }
     private boolean isFreeSymbol(char[][] map, Position newPos) {
-        return checkSpecificSymbol(map[newPos.x][newPos.y], '.');
+        return map[newPos.x][newPos.y] == '.';
     }
     private boolean isTreasure(char[][] map, Position newPos) {
-        return checkSpecificSymbol(map[newPos.x][newPos.y], 'T');
+        return map[newPos.x][newPos.y] == 'T';
     }
     private boolean isEnemy(char[][] map, Position newPos) {
-        return checkSpecificSymbol(map[newPos.x][newPos.y], 'E');
+        return map[newPos.x][newPos.y] == 'E';
     }
 
     private String move(int X, int Y) {
         Position newPos = new Position(position.x + X, position.y + Y);
         if(!inBorders(this.map, newPos)) {
-            return "You are out of the map";
+            return "You are out of the map.";
         }
         if(haveBlockade(this.map, newPos)) {
             return "Wrong move. There is an obstacle and you cannot bypass it.";
@@ -131,18 +134,28 @@ public class GameEngine {
             // fight, could be a class
             while(hero.isAlive() && enemies[enemyCounter].isAlive()){
                 enemies[enemyCounter].takeDamage(hero.attack());
+                if(!enemies[enemyCounter].isAlive()) break;
                 hero.takeDamage(enemies[enemyCounter].attack());
             }
             if(hero.isAlive()) {
                 enemyCounter++;
                 this.map[newPos.x][newPos.y] = '.';
                 changePositions(newPos, this.position);
-                return "Enemy Died.";
+                return "Enemy died.";
             } else {
-                return "Hero is dead! Game Over!";
+                return "Hero is dead! Game over!";
             }
         }
+        this.map[newPos.x][newPos.y] = '.';
+        changePositions(newPos, this.position);
         return "You have successfully passed through the dungeon. Congrats!";
+    }
+
+    private void setLocalArrayOfEnemies(Enemy[] enemies) {
+        this.enemies = new Enemy[enemies.length];
+        for (int i = 0; i < enemies.length; i++) {
+            this.enemies[0] = new Enemy(enemies[i]);
+        }
     }
 }
 

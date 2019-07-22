@@ -10,30 +10,38 @@ public abstract class ActorAbstract implements Actor{
 
     public String getName() { return name; }
     public int getMana() { return mana; }
-    public int getHealth() {return health; }
-    public Weapon getWeapon() {return weapon; }
+    public int getHealth() { return health; }
+    public Weapon getWeapon() { return weapon; }
     public Spell getSpell() { return spell; }
 
     public boolean isAlive() {
-        if(health > 0) {
-            return true;
-        }
-        return false;
-        }
+       return health > 0;
+    }
     public void takeDamage(int damagePoints) {
-        if (damagePoints >= health) {
-            health = 0;
-        }
         health -= damagePoints;
     }
     public int attack() {
-        int attack = 0;
-        if(weapon != null) {
-            attack+=weapon.getDamage();
+        if(weapon == null && spell == null) {
+            return 0;
         }
-        if(spell != null && mana > spell.getManaCost()) {
-            attack+=spell.getDamage();
+        if(spell == null) {
+            return weapon.getDamage();
         }
-        return attack;
+        if(weapon == null) {
+            if(spell.getManaCost() > mana) {
+                return 0;
+            }
+            mana-=spell.getManaCost();
+            return spell.getDamage();
+        }
+        if(weapon.getDamage() >= spell.getDamage())
+        {
+            return weapon.getDamage();
+        }
+        if(spell.getManaCost() <= mana) {
+            mana-=spell.getManaCost();
+            return spell.getDamage();
+        }
+        return weapon.getDamage();
     }
 }

@@ -18,7 +18,11 @@ public abstract class ActorAbstract implements Actor{
        return health > 0;
     }
     public void takeDamage(int damagePoints) {
-        health -= damagePoints;
+        if(damagePoints >= health) {
+            health = 0;
+        } else {
+            health -= damagePoints;
+        }
     }
     public int attack() {
         if(weapon == null && spell == null) {

@@ -23,7 +23,7 @@ public class GameEngine {
             }
         }
         this.hero = new Hero(hero); // if we use copy const (game engine does not uses the submitted hero) not showing
-        this.enemies = enemies.clone();
+        //this.enemies = enemies.clone();
         setLocalArrayOfEnemies(enemies);
         this.treasures = treasures.clone(); // same as above
         setPlayerPosition();
@@ -154,7 +154,7 @@ public class GameEngine {
     private void setLocalArrayOfEnemies(Enemy[] enemies) {
         this.enemies = new Enemy[enemies.length];
         for (int i = 0; i < enemies.length; i++) {
-            this.enemies[0] = new Enemy(enemies[i]);
+            this.enemies[i] = new Enemy(enemies[i]);
         }
     }
 }

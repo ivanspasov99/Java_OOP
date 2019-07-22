@@ -18,6 +18,6 @@ public class HealthPotion implements Treasure {
     @Override
     public String collect(Hero hero) {
         hero.takeHealing(healingPoints);
-        return "Health potion found! "+ healingPoints +" health points added to your hero";
+        return "Health potion found! "+ healingPoints +" health points added to your hero!";
     }
 }

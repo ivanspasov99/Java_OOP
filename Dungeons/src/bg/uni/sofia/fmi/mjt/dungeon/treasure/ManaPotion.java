@@ -19,6 +19,6 @@ public class ManaPotion implements Treasure {
     @Override
     public String collect(Hero hero) {
         hero.takeMana(manaPoints);
-        return "Mana potion found! "+ manaPoints +" mana points added to your hero";
+        return "Mana potion found! "+ manaPoints +" mana points added to your hero!";
     }
 }

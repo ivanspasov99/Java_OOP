@@ -36,28 +36,30 @@ public class Hero extends ActorAbstract{
         }
     }
     public void takeMana(int manaPoints){
-        if(manaPoints + this.mana < this.maxMana) {
-            this.mana+=manaPoints;
-        } else {
-            this.mana = this.maxMana;
+        if(isAlive()) {
+            if (manaPoints + this.mana < this.maxMana) {
+                this.mana += manaPoints;
+            } else {
+                this.mana = this.maxMana;
+            }
         }
 
     }
     public void equip(Weapon weapon){
         if(this.weapon == null) {
-            this.weapon = weapon;
+            this.weapon = new Weapon(weapon);
         }
         if(this.weapon.getDamage() < weapon.getDamage()) {
-            this.weapon = weapon;
+            this.weapon = new Weapon(weapon);
         }
 
     }
     public void learn(Spell spell) {
         if(this.spell == null) {
-            this.spell = spell;
+            this.spell = new Spell(spell);
         }
         if (this.spell.getDamage() < spell.getDamage()) {
-            this.spell = spell;
+            this.spell = new Spell(spell);
         }
     }
 }

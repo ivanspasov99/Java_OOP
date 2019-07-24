@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="300110ee-7571-497a-8116-e4fc42686a22" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IssueTracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IssueTracker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jetbrains/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jetbrains/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="300110ee-7571-497a-8116-e4fc42686a22" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +14,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/jira/Jira.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="651">
@@ -34,6 +28,18 @@
                 <element signature="method#findAll#3;class#Jira#0" />
                 <element signature="method#findAllIssuesCreatedBetween#0;class#Jira#0" />
                 <element signature="method#findAllBefore#0;class#Jira#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/SampleIssueTrackerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1044">
+              <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,6 +105,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -126,13 +133,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Dungeons" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -236,13 +243,11 @@
       <workItem from="1563807048247" duration="3167000" />
       <workItem from="1563865134651" duration="24870000" />
       <workItem from="1563897742454" duration="1364000" />
+      <workItem from="1563952896629" duration="35000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SampleIssueTrackerTest - 2019.07.23 at 19h 11m 26s.xml">
-      <configuration name="SampleIssueTrackerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SampleIssueTrackerTest - 2019.07.23 at 19h 13m 59s.xml">
       <configuration name="SampleIssueTrackerTest" configurationId="JUnit" />
     </history-entry>
@@ -270,14 +275,17 @@
     <history-entry file="SampleIssueTrackerTest - 2019.07.23 at 19h 19m 06s.xml">
       <configuration name="SampleIssueTrackerTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SampleIssueTrackerTest - 2019.07.24 at 10h 22m 02s.xml">
+      <configuration name="SampleIssueTrackerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29401000" />
+    <option name="totallyTimeSpent" value="29436000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17590618" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17750533" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -543,16 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/SampleIssueTrackerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/jira/Jira.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
@@ -566,6 +564,16 @@
             <element signature="method#findAll#3;class#Jira#0" />
             <element signature="method#findAllIssuesCreatedBetween#0;class#Jira#0" />
             <element signature="method#findAllBefore#0;class#Jira#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/SampleIssueTrackerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

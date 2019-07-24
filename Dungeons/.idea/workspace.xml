@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b22a3752-4e28-441a-97b3-01c91150b203" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/actor/ActorAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/actor/ActorAbstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/actor/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/actor/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/treasure/HealthPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/treasure/HealthPotion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/treasure/ManaPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/treasure/ManaPotion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SampleDungeonsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SampleDungeonsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IssueTracker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../IssueTracker/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/SampleDungeonsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            <state relative-caret-position="252">
+              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,7 +31,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/treasure/ManaPotion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="315">
               <caret line="21" column="83" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
               <folding>
                 <element signature="e#210#211#0" expanded="true" />
@@ -50,7 +44,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/treasure/HealthPotion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="294">
               <caret line="20" column="90" selection-start-line="20" selection-start-column="90" selection-end-line="20" selection-end-column="90" />
               <folding>
                 <element signature="e#219#220#0" expanded="true" />
@@ -65,7 +59,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/GameEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1912">
+            <state relative-caret-position="1995">
               <caret line="121" column="36" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -131,7 +125,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -143,6 +136,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,7 +190,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../OOP_In_Java_2/WrapperStaticVarMethEnums" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -300,13 +294,11 @@
       <workItem from="1563779000777" duration="3316000" />
       <workItem from="1563782788401" duration="32000" />
       <workItem from="1563784935951" duration="6119000" />
+      <workItem from="1563952933688" duration="330000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SampleDungeonsTest - 2019.07.22 at 13h 33m 50s.xml">
-      <configuration name="SampleDungeonsTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SampleDungeonsTest - 2019.07.22 at 13h 34m 06s.xml">
       <configuration name="SampleDungeonsTest" configurationId="JUnit" />
     </history-entry>
@@ -334,14 +326,18 @@
     <history-entry file="SampleDungeonsTest - 2019.07.22 at 13h 49m 25s.xml">
       <configuration name="SampleDungeonsTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SampleDungeonsTest - 2019.07.24 at 10h 22m 22s.xml">
+      <configuration name="SampleDungeonsTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57252000" />
+    <option name="totallyTimeSpent" value="57582000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16204691" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16364606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -350,7 +346,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34424603" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34424603" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2936508" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -657,22 +653,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/GameEngine.java">
+    <entry file="file://$PROJECT_DIR$/test/SampleDungeonsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1912">
-          <caret line="121" column="36" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
+        <state relative-caret-position="252">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#setPlayerPosition#0;class#GameEngine#0" />
-            <element signature="method#changePositions#0;class#GameEngine#0" />
-            <element signature="method#inBorders#0;class#GameEngine#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/treasure/ManaPotion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="315">
           <caret line="21" column="83" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
           <folding>
             <element signature="e#210#211#0" expanded="true" />
@@ -683,7 +676,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/treasure/HealthPotion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="294">
           <caret line="20" column="90" selection-start-line="20" selection-start-column="90" selection-end-line="20" selection-end-column="90" />
           <folding>
             <element signature="e#219#220#0" expanded="true" />
@@ -694,12 +687,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/SampleDungeonsTest.java">
+    <entry file="file://$PROJECT_DIR$/src/bg/uni/sofia/fmi/mjt/dungeon/GameEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="1995">
+          <caret line="121" column="36" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#setPlayerPosition#0;class#GameEngine#0" />
+            <element signature="method#changePositions#0;class#GameEngine#0" />
+            <element signature="method#inBorders#0;class#GameEngine#0" />
           </folding>
         </state>
       </provider>

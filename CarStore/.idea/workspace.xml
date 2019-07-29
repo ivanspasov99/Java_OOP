@@ -155,6 +155,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../IssueTracker" />
@@ -255,17 +256,11 @@
       <option name="presentableId" value="Default" />
       <updated>1564139789400</updated>
       <workItem from="1564139796053" duration="15931000" />
-      <workItem from="1564382857359" duration="7558000" />
+      <workItem from="1564382857359" duration="8262000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SampleCarStoreTest - 2019.07.29 at 11h 34m 31s.xml">
-      <configuration name="SampleCarStoreTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SampleCarStoreTest - 2019.07.29 at 11h 36m 33s.xml">
-      <configuration name="SampleCarStoreTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SampleCarStoreTest_testGetCarsWithComparatorInDefaultOrder - 2019.07.29 at 11h 41m 34s.xml">
       <configuration name="SampleCarStoreTest.testGetCarsWithComparatorInDefaultOrder" configurationId="JUnit" />
     </history-entry>
@@ -290,15 +285,21 @@
     <history-entry file="CarTest - 2019.07.29 at 11h 49m 33s.xml">
       <configuration name="CarTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CarStoreTest - 2019.07.29 at 12h 22m 42s.xml">
+      <configuration name="CarStoreTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CarTest - 2019.07.29 at 12h 22m 47s.xml">
+      <configuration name="CarTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23489000" />
+    <option name="totallyTimeSpent" value="24193000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2585288" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2585288" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -307,7 +308,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936507" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936507" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

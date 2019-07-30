@@ -6,12 +6,13 @@ import Interfaces.ShoppingCart;
 import java.util.*;
 
 public class MapShoppingCart implements ShoppingCart {
-    Map<Item, Integer> map = new HashMap<>();
-    int totalPrice = 0;
+    private Map<Item, Integer> map = new HashMap<>();
+    private int totalPrice = 0;
 
     @Override
     public Collection<Item> getUniqueItems() {
         Collection<Item> coll = new HashSet<>(map.keySet());
+        // Second way with TreeMap and Comparator
         return coll;
     }
 

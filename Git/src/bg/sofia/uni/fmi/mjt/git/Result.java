@@ -13,7 +13,7 @@ public class Result {
         return message;
     }
 
-    public boolean isSuccessfull() {
+    public boolean isSuccessful() {
         return isSuccessfull;
     }
 }

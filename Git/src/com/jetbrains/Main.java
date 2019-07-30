@@ -23,12 +23,17 @@ public class Main {
         //System.out.println(result4.getMessage());
 
         Result commitRes = rep.commit("First Commit");
-        System.out.println(commitRes.getMessage());
+        //System.out.println(commitRes.getMessage());
 
         rep.add("1", "2", "3");
         rep.commit("Second Commit");
         rep.remove("1");
         rep.commit("Second remove commit");
+        //System.out.println(rep.getHead().getMessage());
+        //System.out.println(rep.log().getMessage());
+        rep.createBranch("Trucks");
+        rep.checkoutBranch("Trucks");
+        rep.add("111");
         System.out.println("zdr");
     }
 }

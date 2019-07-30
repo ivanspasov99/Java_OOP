@@ -7,6 +7,10 @@ public class File {
         this.fileName = fileName;
     }
 
+    public File(File other) {
+        this.fileName = other.fileName;
+    }
+
     public String getName() {
         return fileName;
     }

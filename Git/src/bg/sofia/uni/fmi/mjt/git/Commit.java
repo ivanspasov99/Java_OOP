@@ -1,5 +1,7 @@
 package bg.sofia.uni.fmi.mjt.git;
 
+import Drives.Stage;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -10,13 +12,20 @@ public class Commit {
     private String commitMessage;
     private String hash;
     private String date;
+    private Stage stage; // every commit has own stage
 
-    public Commit(String message) {
-        this.commitMessage = message;
-        this.date = generateDateString();
-        hash = hexDigest(message + date);
+    public Commit(Commit other) {
+        this.commitMessage = other.commitMessage;
+        this.hash = other.hash;
+        this.date = other.date;
     }
 
+    public Commit(String message, Stage stage) {
+        this.commitMessage = message;
+        this.date = generateDateString();
+        hash = hexDigest(date + message);
+        this.stage = stage;
+    }
     public String getMessage() {
         return commitMessage;
     }
@@ -27,6 +36,10 @@ public class Commit {
 
     public String getDate() {
         return date;
+    }
+
+    public Stage getCommitStage() {
+        return stage;
     }
 
     // exception not okay, not in task
@@ -51,7 +64,7 @@ public class Commit {
     private String generateDateString() {
         LocalDateTime dateTime = LocalDateTime.now();
         // cool thing to format by pattern
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("E MMM dd hh:mm yyyy");
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm yyyy");
         return dateTime.format(dateTimeFormatter);
 
 

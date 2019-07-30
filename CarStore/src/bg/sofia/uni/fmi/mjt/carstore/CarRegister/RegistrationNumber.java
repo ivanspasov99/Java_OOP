@@ -3,7 +3,7 @@ package bg.sofia.uni.fmi.mjt.carstore.CarRegister;
 import bg.sofia.uni.fmi.mjt.carstore.enums.Region;
 
 import java.util.Random;
-
+// can be in RegistrationNumber as a method
 public abstract class RegistrationNumber {
     public static String generateRegNumber(Region region) {
         Random rnd = new Random();

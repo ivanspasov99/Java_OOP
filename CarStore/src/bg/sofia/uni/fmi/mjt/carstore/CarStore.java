@@ -61,7 +61,11 @@ public class CarStore {
         return descendingCollection;
     }
     public Collection<Car> getCars() {
-        return store;
+        // important if we copy or we return
+        Set<Car> copy = new HashSet<>();
+        copy.addAll(store);
+        return copy;
+        //return Set.copyOf(store);
     }
     public Collection<Car> getCars(Comparator<Car> comparator) {
         // default comparator is going to sort them when we are inserting them

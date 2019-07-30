@@ -7,6 +7,9 @@ import bg.sofia.uni.fmi.mjt.carstore.enums.EngineType;
 import bg.sofia.uni.fmi.mjt.carstore.enums.Model;
 import bg.sofia.uni.fmi.mjt.carstore.enums.Region;
 
+import java.util.Collection;
+import java.util.Collections;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -23,5 +26,9 @@ public class Main {
         store.add(four);
         store.add(five);
         System.out.println("Yes");
+        Collection<Car> storeCopy = store.getCars();
+        storeCopy.clear();
+
+        System.out.println(store.getNumberOfCars());
     }
 }

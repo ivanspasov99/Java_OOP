@@ -15,10 +15,11 @@ public class Stage {
     }
 
     public Stage(Stage other) {
-        for (File file: other.filesStagedForCommit) {
+        // it will not work with collection because of limited capacity
+        for (File file : other.filesStagedForCommit) {
             this.filesStagedForCommit.add(new File(file));
         }
-        for (File file: other.filesStagedForRemoval) {
+        for (File file : other.filesStagedForRemoval) {
             this.filesStagedForRemoval.add(new File(file));
         }
     }

@@ -19,14 +19,15 @@ public class Repository {
         List<File> tempStage = new ArrayList<>();
         for (String fileName : files) {
             if (checkIfFileAlreadyExistIn(fileName, currentBranch.getStage().getFilesStagedForCommit())
-            || checkIfFileAlreadyExistIn(fileName, currentBranch.getDrive().getFilesInDrive())) {
-                return new Result("'" + fileName + "' already exists", false);
+                    || checkIfFileAlreadyExistIn(fileName, currentBranch.getDrive().getFilesInDrive())) {
+                String message = String.format("'%s' already exists", fileName);
+                return new Result(message, false);
             }
             tempStage.add(new File(fileName));
         }
         currentBranch.getStage().getFilesStagedForCommit().addAll(tempStage);
-
-        return new Result("added " + getFormattedDateString(files) + "to stage", true);
+        String message = String.format("added %s to stage", String.join(", ", files));
+        return new Result(message, true);
     }
 
     public Result remove(String... files) {
@@ -35,31 +36,32 @@ public class Repository {
             // exist in stage or in drive
             if (!(checkIfFileAlreadyExistIn(fileName, currentBranch.getStage().getFilesStagedForCommit())
                     || checkIfFileAlreadyExistIn(fileName, currentBranch.getDrive().getFilesInDrive()))) {
-                return new Result("'" + fileName + "' did not match any files", false);
+                String message = String.format("'%s' did not match any files", fileName);
+                return new Result(message, false);
             }
             tempStage.add(new File(fileName));
         }
         currentBranch.getStage().getFilesForRemoval().addAll(tempStage);
-
-        return new Result("added " + getFormattedDateString(files) + "for removal", true);
+        String message = String.format("added %s for removal", String.join(", ", files));
+        return new Result(message , true);
     }
 
     public Result commit(String message) {
-        currentBranch.addCommit(new Commit(message, currentBranch.getStage()));
-
         List<File> tempStageForCommit = currentBranch.getStage().getFilesStagedForCommit();
         List<File> tempStageForRemoval = currentBranch.getStage().getFilesForRemoval();
 
         boolean containsAll = tempStageForRemoval.containsAll(tempStageForCommit);
-        if(tempStageForCommit.size() == 0 && tempStageForRemoval.size() == 0) {
+        if (tempStageForCommit.size() == 0 && tempStageForRemoval.size() == 0) {
             return new Result("nothing to commit, working tree clean", false);
         }
-        if(tempStageForCommit.size() == tempStageForRemoval.size() && containsAll) {
+        if (tempStageForCommit.size() == tempStageForRemoval.size() && containsAll) {
             return new Result("nothing to commit, working tree clean", false);
         }
 
         currentBranch.getDrive().getFilesInDrive().addAll(currentBranch.getStage().getFilesStagedForCommit());
         currentBranch.getDrive().getFilesInDrive().removeAll(currentBranch.getStage().getFilesForRemoval());
+
+        currentBranch.addCommit(new Commit(message, currentBranch.getStage()));
 
         currentBranch.clearStage();
 
@@ -67,21 +69,21 @@ public class Repository {
     }
 
     public Commit getHead() {
-        if(currentBranch.getCurrentCommit() == null) {
+        if (currentBranch.getCurrentCommit() == null) {
             return null;
         }
         return currentBranch.getCurrentCommit();
     }
 
     public Result log() {
-        // refactor this print!!!!!!!!!!!
-        if(currentBranch.getCurrentCommit() == null) {
+
+        if (currentBranch.getCurrentCommit() == null) {
             return new Result("branch " + currentBranch.getName() + " does not have any commits yet", false);
         }
         StringBuilder mess = new StringBuilder();
         int counter = 0;
-        for (Commit commit: currentBranch.getCommits()) {
-            if(counter == currentBranch.getCommits().size() - 1) {
+        for (Commit commit : currentBranch.getCommits()) {
+            if (counter == currentBranch.getCommits().size() - 1) {
                 mess.insert(0, "commit " + commit.getHash() + "\nDate: " + commit.getDate() + "\n\n\t" + commit.getMessage());
             } else {
                 counter++;
@@ -97,7 +99,7 @@ public class Repository {
     }
 
     public Result createBranch(String name) {
-        if(branchList.containsKey(name)) {
+        if (branchList.containsKey(name)) {
             return new Result("branch " + name + " already exists", false);
         }
         Branch newBranch = new Branch(currentBranch, name);
@@ -106,40 +108,38 @@ public class Repository {
     }
 
     public Result checkoutBranch(String name) {
-        if(!branchList.containsKey(name)) {
+        if (!branchList.containsKey(name)) {
             return new Result("branch " + name + " does not exist", false);
         }
         currentBranch = branchList.get(name);
         return new Result("switched to branch " + name, true);
     }
 
-   public Result checkoutCommit(String hash) {
-       for (Commit commitHash: currentBranch.getCommits()) {
-           if(commitHash.getHash().equals(hash)) {
-               // algorithm for reverting stage files
-               boolean flag = false;
+    public Result checkoutCommit(String hash) {
+        for (Commit commitHash : currentBranch.getCommits()) {
+            if (commitHash.getHash().equals(hash)) {
+                // algorithm for reverting stage files
+                boolean flag = false;
 
-               for (Iterator<Commit> it = currentBranch.getCommits().iterator(); it.hasNext();)
-               {
-                   Commit commit = it.next();
-                   if(commit.getHash().equals(hash)) {
-                       currentBranch.setCurrentCommit(commit);
-                       flag = true;
-                       continue;
-                   }
-                   if(flag) {
-                       // reversed logic of commit, add all removed, and remove all added
-                       //addAndReplaceDuplicates(currentBranch.getStage().getFilesStagedForCommit(), currentBranch.getDrive().getFilesInDrive());
-                       currentBranch.getDrive().getFilesInDrive().addAll(commit.getCommitStage().getFilesForRemoval());
-                       currentBranch.getDrive().getFilesInDrive().removeAll(commit.getCommitStage().getFilesStagedForCommit());
-                       // if we don't remove the iterator, but remove form commits.remove(commit), iterator won't notice it
-                       it.remove();
-                   }
-               }
-               return new Result("HEAD is now at " + currentBranch.getCurrentCommit().getHash(), true);
-           }
-       }
-       return new Result("commit " + hash + " does not exist", false);
+                for (Iterator<Commit> it = currentBranch.getCommits().iterator(); it.hasNext(); ) {
+                    Commit commit = it.next();
+                    if (commit.getHash().equals(hash)) {
+                        currentBranch.setCurrentCommit(commit);
+                        flag = true;
+                        continue;
+                    }
+                    if (flag) {
+                        // reversed logic of commit, add all removed, and remove all added
+                        currentBranch.getDrive().getFilesInDrive().addAll(commit.getCommitStage().getFilesForRemoval());
+                        currentBranch.getDrive().getFilesInDrive().removeAll(commit.getCommitStage().getFilesStagedForCommit());
+                        // if we don't remove the iterator, but remove form commits.remove(commit), iterator won't notice it
+                        it.remove();
+                    }
+                }
+                return new Result("HEAD is now at " + currentBranch.getCurrentCommit().getHash(), true);
+            }
+        }
+        return new Result("commit " + hash + " does not exist", false);
     }
 
     private boolean checkIfFileAlreadyExistIn(String fileName, Collection coll) {
@@ -147,33 +147,13 @@ public class Repository {
         return coll.contains(tempFile);
 
     }
-
-    private StringBuilder getFormattedDateString(String[] files) {
-        // need rework!!!!!!! Not good formatting
-        StringBuilder formattedString = new StringBuilder();
-        if(files.length == 1) {
-            return formattedString.append(files[0] + " ");
-        }
-
-        int counter = 0;
-        for (String file : files) {
-            if(counter == files.length - 1) {
-                formattedString.append(file + " ");
-            } else {
-                counter++;
-                formattedString.append(file + ", ");
-            }
-        }
-        return formattedString;
-    }
-
     private void addAndReplaceDuplicates(List<File> drive, List<File> stage) {
         // if files are updated for example
         // reversed logic
-        for (Iterator it = drive.iterator(); it.hasNext();) {
-            File tempFile = (File)it.next();
-            if(stage.contains(tempFile)) {
-               drive.remove(tempFile);
+        for (Iterator it = drive.iterator(); it.hasNext(); ) {
+            File tempFile = (File) it.next();
+            if (stage.contains(tempFile)) {
+                it.remove();
             }
         }
         drive.addAll(stage);

@@ -2,11 +2,11 @@ package bg.sofia.uni.fmi.mjt.git;
 
 public class Result {
     private String message;
-    private boolean isSuccessfull;
+    private boolean isSuccessful;
 
-    public Result(String mess, boolean isSucc) {
+    Result(String mess, boolean isSucc) {
         this.message = mess;
-        this.isSuccessfull = isSucc;
+        this.isSuccessful = isSucc;
     }
 
     public String getMessage() {
@@ -14,6 +14,6 @@ public class Result {
     }
 
     public boolean isSuccessful() {
-        return isSuccessfull;
+        return isSuccessful;
     }
 }

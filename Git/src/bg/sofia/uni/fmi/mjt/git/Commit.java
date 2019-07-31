@@ -2,9 +2,6 @@ package bg.sofia.uni.fmi.mjt.git;
 
 import Drives.Stage;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -12,7 +9,7 @@ public class Commit {
     private String commitMessage;
     private String hash;
     private String date;
-    private Stage stage; // every commit has own stage
+    private Stage stage; // every commit has own stage , that was problem with files revert
 
     public Commit(Commit other) {
         this.commitMessage = other.commitMessage;
@@ -23,9 +20,10 @@ public class Commit {
     public Commit(String message, Stage stage) {
         this.commitMessage = message;
         this.date = generateDateString();
-        hash = hexDigest(date + message);
+        hash = Crypt.hexDigest(date + message);
         this.stage = stage;
     }
+
     public String getMessage() {
         return commitMessage;
     }
@@ -42,25 +40,7 @@ public class Commit {
         return stage;
     }
 
-    // exception not okay, not in task
-    private String hexDigest(String input) {
-        try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-1");
-            byte[] bytes = digest.digest(input.getBytes(StandardCharsets.UTF_8));
-            return convertBytesToHex(bytes);
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private String convertBytesToHex(byte[] bytes) {
-        StringBuilder hex = new StringBuilder();
-        for (byte current : bytes) {
-            hex.append(String.format("%02x", current));
-        }
-        return hex.toString();
-    }
-
+    // put in StringFormatter??
     private String generateDateString() {
         LocalDateTime dateTime = LocalDateTime.now();
         // cool thing to format by pattern

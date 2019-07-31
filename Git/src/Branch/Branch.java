@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Branch {
     private String name;
-    private Commit currentCommit = null;
+    private Commit currentCommit = null; // we can use commits.get(commits.size()); for current commit
     private Stage stage;
     private Drive drive;
     private List<Commit> commits = new ArrayList<>();
@@ -20,7 +20,7 @@ public class Branch {
         this.currentCommit = (other.currentCommit == null) ? null : new Commit(other.currentCommit);
         this.stage = new Stage(other.stage);
         this.drive = new Drive(other.drive);
-        for (Commit commit: other.commits) {
+        for (Commit commit : other.commits) {
             this.commits.add(new Commit(commit));
         }
     }
@@ -55,10 +55,12 @@ public class Branch {
         // GarbColl will do the rest
         this.stage = new Stage();
     }
+
     public void addCommit(Commit commit) {
         currentCommit = commit;
         commits.add(commit);
     }
+
     public void setCurrentCommit(Commit commit) {
         currentCommit = commit;
     }

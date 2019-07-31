@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e1627a04-f2ff-45fb-a3fd-980e13c8743a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Branch/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Branch/Branch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Drives/Drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drives/Drive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Drives/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drives/Stage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/git/Commit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/git/Commit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/git/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/git/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/git/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/git/Result.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,30 +22,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/git/Repository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
-              <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+            <state relative-caret-position="254">
+              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#add#0;class#Repository#0" />
+                <element signature="method#remove#0;class#Repository#0" />
                 <element signature="method#commit#0;class#Repository#0" />
                 <element signature="method#getHead#0;class#Repository#0" />
                 <element signature="method#log#0;class#Repository#0" />
-                <element signature="e#3907#3908#0" expanded="true" />
-                <element signature="e#3953#3954#0" expanded="true" />
                 <element signature="method#createBranch#0;class#Repository#0" />
                 <element signature="method#checkoutBranch#0;class#Repository#0" />
                 <element signature="method#checkoutCommit#0;class#Repository#0" />
+                <element signature="method#checkIfFileAlreadyExistIn#0;class#Repository#0" />
                 <element signature="method#addAndReplaceDuplicates#0;class#Repository#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/git/StringFormatter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -229,17 +213,11 @@
       <workItem from="1564472635943" duration="18607000" />
       <workItem from="1564497993722" duration="12213000" />
       <workItem from="1564557741768" duration="2446000" />
-      <workItem from="1564562023991" duration="1037000" />
+      <workItem from="1564562023991" duration="1754000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RepositoryTest - 2019.07.30 at 21h 06m 51s.xml">
-      <configuration name="RepositoryTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RepositoryTest - 2019.07.30 at 21h 07m 21s.xml">
-      <configuration name="RepositoryTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RepositoryTest - 2019.07.30 at 21h 07m 43s.xml">
       <configuration name="RepositoryTest" configurationId="JUnit" />
     </history-entry>
@@ -264,15 +242,21 @@
     <history-entry file="RepositoryTest - 2019.07.31 at 11h 44m 03s.xml">
       <configuration name="RepositoryTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="RepositoryTest - 2019.07.31 at 11h 54m 27s.xml">
+      <configuration name="RepositoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RepositoryTest - 2019.07.31 at 11h 54m 53s.xml">
+      <configuration name="RepositoryTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34303000" />
+    <option name="totallyTimeSpent" value="35020000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -280,8 +264,8 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35019842" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936507" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.38244852" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -415,16 +399,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/RepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6426">
-          <caret line="308" selection-start-line="308" selection-end-line="308" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Drives/Stage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -505,26 +479,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/git/StringFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="210">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/RepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/git/Repository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+        <state relative-caret-position="254">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#add#0;class#Repository#0" />
+            <element signature="method#remove#0;class#Repository#0" />
             <element signature="method#commit#0;class#Repository#0" />
             <element signature="method#getHead#0;class#Repository#0" />
             <element signature="method#log#0;class#Repository#0" />
-            <element signature="e#3907#3908#0" expanded="true" />
-            <element signature="e#3953#3954#0" expanded="true" />
             <element signature="method#createBranch#0;class#Repository#0" />
             <element signature="method#checkoutBranch#0;class#Repository#0" />
             <element signature="method#checkoutCommit#0;class#Repository#0" />
+            <element signature="method#checkIfFileAlreadyExistIn#0;class#Repository#0" />
             <element signature="method#addAndReplaceDuplicates#0;class#Repository#0" />
           </folding>
         </state>

@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c81564f4-7b16-4a24-b7c4-4749d32275e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/BaseCoffeeMachine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/BasicCoffeeMachine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/BasicContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/Beverage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/Cappuccino.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/CoffeeMachine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/Container.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/Espresso.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/Mochaccino.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/PremiumCoffeeMachine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/PremiumContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/coffee_machine/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jetbrains/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jetbrains/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SampleCoffeeMachineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SampleCoffeeMachineTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/jetbrains/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+            <state relative-caret-position="231">
+              <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,14 +30,7 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/CoffeeMachineTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#5988#5989#0" expanded="true" />
-                <element signature="e#6048#6049#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -125,7 +104,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-90" />
     <option name="y" value="364" />
     <option name="width" value="1920" />
@@ -148,7 +127,13 @@
             <path>
               <item name="CoffeeMachine_Task1" type="b2602c69:ProjectViewProjectNode" />
               <item name="CoffeeMachine_Task1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CoffeeMachine_Task1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CoffeeMachine_Task1" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="CoffeeMachineTest.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
           </expand>
           <select />
@@ -271,19 +256,13 @@
       <workItem from="1563274685236" duration="3625000" />
       <workItem from="1563287754303" duration="3868000" />
       <workItem from="1563346034391" duration="19196000" />
+      <workItem from="1563954050822" duration="247000" />
+      <workItem from="1563955562825" duration="43000" />
+      <workItem from="1563955625088" duration="358000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="bg_fmi_mjt_lab_coffee_machine_in_CoffeeMachine_Task1 - 2019.07.17 at 10h 52m 40s.xml">
-      <configuration name="bg.fmi.mjt.lab.coffee_machine in CoffeeMachine_Task1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SampleCoffeeMachineTest_(1) - 2019.07.17 at 10h 53m 03s.xml">
-      <configuration name="SampleCoffeeMachineTest (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SampleCoffeeMachineTest_(1) - 2019.07.17 at 10h 53m 15s.xml">
-      <configuration name="SampleCoffeeMachineTest (1)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SampleCoffeeMachineTest_(1) - 2019.07.17 at 11h 54m 56s.xml">
       <configuration name="SampleCoffeeMachineTest (1)" configurationId="JUnit" />
     </history-entry>
@@ -305,15 +284,23 @@
     <history-entry file="CoffeeMachineTest - 2019.07.17 at 15h 51m 29s.xml">
       <configuration name="CoffeeMachineTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SampleCoffeeMachineTest_(1) - 2019.07.24 at 10h 41m 05s.xml">
+      <configuration name="SampleCoffeeMachineTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CoffeeMachineTest_(1) - 2019.07.24 at 10h 41m 10s.xml">
+      <configuration name="CoffeeMachineTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CoffeeMachineTest_(1) - 2019.07.24 at 11h 06m 37s.xml">
+      <configuration name="CoffeeMachineTest (1)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43177000" />
+    <option name="totallyTimeSpent" value="43825000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26545843" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27345416" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -322,7 +309,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35861322" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39111593" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -412,12 +399,6 @@
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/test/CoffeeMachineTest.java</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -447,210 +428,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/Cappuccino.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/BasicContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-          <folding>
-            <element signature="e#108#109#0" expanded="true" />
-            <element signature="e#145#146#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/PremiumContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding>
-            <element signature="e#266#267#0" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/Mochaccino.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/Espresso.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/Beverage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/Container.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/CoffeeMachineAbstract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="method#enoughSupplies#0;class#CoffeeMachineAbstract#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/PremiumCoffeeMachine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-          <folding>
-            <element signature="e#1281#1282#0" expanded="true" />
-            <element signature="method#refill#0;class#PremiumCoffeeMachine#0" />
-            <element signature="method#enoughSupplies#0;class#PremiumCoffeeMachine#0" />
-            <element signature="method#decreaseSupplies#0;class#PremiumCoffeeMachine#0" />
-            <element signature="method#incrementLuckCounter#0;class#PremiumCoffeeMachine#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/BasicCoffeeMachine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-          <folding>
-            <element signature="method#refill#0;class#BasicCoffeeMachine#0" />
-            <element signature="method#enoughSupplies#0;class#BasicCoffeeMachine#0" />
-            <element signature="method#decreaseSupplies#0;class#BasicCoffeeMachine#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/CoffeeMachine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BasicCoffeeMachine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BasicContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Product.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PremiumContainer.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PremiumCoffeeMachine.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Mochaccino.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Espresso.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CoffeeMachine.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cappuccino.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beverage.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/BasicContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/Beverage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/Cappuccino.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/Container.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/Espresso.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/Mochaccino.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/PremiumContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/module-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/Cappuccino.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/BasicContainer.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/PremiumContainer.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/Mochaccino.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/Espresso.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/Beverage.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/Container.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/CoffeeMachineAbstract.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/PremiumCoffeeMachine.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/BasicCoffeeMachine.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/Product.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/coffee_machine/CoffeeMachine.java" />
+    <entry file="file://$PROJECT_DIR$/src/BasicCoffeeMachine.java" />
+    <entry file="file://$PROJECT_DIR$/src/BasicContainer.java" />
+    <entry file="file://$PROJECT_DIR$/src/Product.java" />
+    <entry file="file://$PROJECT_DIR$/src/PremiumContainer.java" />
+    <entry file="file://$PROJECT_DIR$/src/PremiumCoffeeMachine.java" />
+    <entry file="file://$PROJECT_DIR$/src/Mochaccino.java" />
+    <entry file="file://$PROJECT_DIR$/src/Espresso.java" />
+    <entry file="file://$PROJECT_DIR$/src/Container.java" />
+    <entry file="file://$PROJECT_DIR$/src/CoffeeMachine.java" />
+    <entry file="file://$PROJECT_DIR$/src/Cappuccino.java" />
+    <entry file="file://$PROJECT_DIR$/src/Beverage.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/BasicContainer.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/Beverage.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/Cappuccino.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/Container.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/Espresso.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/Mochaccino.java" />
+    <entry file="file://$PROJECT_DIR$/src/bg/fmi/mjt/lab/coffee_machine/PremiumContainer.java" />
+    <entry file="file://$PROJECT_DIR$/src/module-info.java" />
     <entry file="file://$PROJECT_DIR$/CoffeeMachine_Task1.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -804,8 +612,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jetbrains/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        <state relative-caret-position="231">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -813,14 +621,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/CoffeeMachineTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#5988#5989#0" expanded="true" />
-            <element signature="e#6048#6049#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

@@ -3,7 +3,6 @@ package bg.sofia.uni.fmi.mjt.cache;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
-
 public class MemCache<K, V> implements Cache<K, V> {
 
     private Map<K, V> genericCache;

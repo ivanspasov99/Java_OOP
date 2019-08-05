@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -31,7 +32,7 @@ public class MemCacheTest {
     }
 
     @Test
-    public void testShouldNotPutValueToTheCache() throws CapacityExceededException {
+    public void testShouldNotPutNullValueToTheCache() throws CapacityExceededException {
         cacheWithLongCapacity.set(null, 1, null);
         assertEquals(0, cacheWithLongCapacity.size());
         cacheWithLongCapacity.set("", null, null);
@@ -39,19 +40,32 @@ public class MemCacheTest {
     }
 
     @Test
-    public void testShouldPutValueToTheCache() throws CapacityExceededException {
+    public void testShouldPutIntegerValuesToTheCache() throws CapacityExceededException {
         cacheWithLongCapacity.set("First", 1, null);
+        assertEquals(1, cacheWithLongCapacity.get("First").intValue());
         assertEquals(1, cacheWithLongCapacity.size());
+
         cacheWithLongCapacity.set("Second", 2, null);
+        assertEquals(2, cacheWithLongCapacity.get("Second").intValue());
         assertEquals(2, cacheWithLongCapacity.size());
     }
 
     @Test
     public void testShouldGetAllItems() throws CapacityExceededException {
-        cacheWithLongCapacity.set("First", 1, null);
-        cacheWithLongCapacity.set("Second", 1, LocalDateTime.now().minusDays(2));
-        cacheWithLongCapacity.set("Third", 1, LocalDateTime.now().minusDays(123123));
+        final int SIZE = 3;
+        List<Integer> list = new ArrayList<>();
 
+        for (int i = 0; i < SIZE; i++) {
+            list.add(i);
+        }
+
+        for (int i = 0; i < SIZE; i++) {
+            cacheWithLongCapacity.set("Number: "+i, list.get(i), null);
+        }
+
+        for (int i = 0; i < SIZE; i++) {
+            assertEquals(i, cacheWithLongCapacity.get("Number: "+i).intValue());
+        }
         assertEquals(3, cacheWithLongCapacity.size());
     }
 
@@ -101,7 +115,12 @@ public class MemCacheTest {
         cacheWithLongCapacity.set("First", 1, notExpiredTime);
         cacheWithLongCapacity.set("Second", 2, null);
         cacheWithLongCapacity.set("Third", 3, expiredTime);
+
+        assertEquals(3, cacheWithLongCapacity.size());
+
         cacheWithLongCapacity.set("Fourth", 4, null);
+
+        assertEquals(3, cacheWithLongCapacity.size());
 
         assertNull(cacheWithLongCapacity.get("Third"));
         assertEquals(4, cacheWithLongCapacity.get("Fourth").intValue());

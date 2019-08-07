@@ -1,4 +1,4 @@
-package analyzerTypes;
+package bg.sofia.uni.fmi.mjt.stylechecker.analyzerTypes;
 
 import java.io.BufferedWriter;
 import java.io.IOException;

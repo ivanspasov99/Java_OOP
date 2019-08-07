@@ -1,7 +1,6 @@
 package bg.sofia.uni.fmi.mjt.stylechecker;
 
-import analyzerTypes.*;
-import org.junit.jupiter.params.aggregator.ArgumentAccessException;
+import bg.sofia.uni.fmi.mjt.stylechecker.analyzerTypes.*;
 
 import java.io.*;
 import java.util.Map;
@@ -86,7 +85,7 @@ public class StyleChecker {
     private void initSpecificProperties(InputStream inputStream) {
         try {
             properties.load(inputStream);
-        } catch (IOException | ArgumentAccessException e) {
+        } catch (IOException e) {
             // maybe message?
             initDefaultProperties();
         }

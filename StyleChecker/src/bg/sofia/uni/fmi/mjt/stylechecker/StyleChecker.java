@@ -46,7 +46,8 @@ public class StyleChecker {
 
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                if (line.equals("")) {
+                if (line.trim().equals("")) {
+                    bufferedWriter.append(line + System.lineSeparator());
                     continue;
                 }
                 if (isPropertySet(StyleProperties.WILDCARD_IMPORT.getCheckName())) {
@@ -63,7 +64,7 @@ public class StyleChecker {
                     tempLine.setMaxLength(Integer.parseInt(properties.getProperty(StyleProperties.LINE_LENGTH_LIMIT.getCheckName())));
                     tempLine.analyze(line, bufferedWriter);
                 }
-                bufferedWriter.append(line);
+                bufferedWriter.append(line + System.lineSeparator());
 
             }
 

@@ -12,7 +12,7 @@ public class LengthOfLineCheck implements AnalyzerType {
 
     @Override
     public void analyze(String line, BufferedWriter output) throws IOException {
-        if (line.indexOf("i") != 0 && line.trim().length() > MAX_LENGTH) {
+        if (!line.contains("import") && line.trim().length() > MAX_LENGTH) {
             output.append("// FIXME Length of line should not exceed " + MAX_LENGTH + " characters\r\n");
         }
     }

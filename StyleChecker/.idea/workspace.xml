@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/test/bg/sofia/uni/fmi/mjt/stylechecker/StyleCheckerTest.java" line="184" mnemonic="1" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="73a8438f-0083-400e-ab0d-13dd290a9e35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analyzerTypes/AnalyzerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/AnalyzerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analyzerTypes/LengthOfLineCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/LengthOfLineCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analyzerTypes/OpeningBracketCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/OpeningBracketCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analyzerTypes/StatementsPerLineCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/StatementsPerLineCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analyzerTypes/WildCardImportCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/WildCardImportCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StyleChecker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StyleChecker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StyleCheckerTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/StyleChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/StyleChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/StyleCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/bg/sofia/uni/fmi/mjt/stylechecker/StyleCheckerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/LengthOfLineCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/LengthOfLineCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/WildCardImportCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/WildCardImportCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/bg/sofia/uni/fmi/mjt/stylechecker/StyleCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/bg/sofia/uni/fmi/mjt/stylechecker/StyleCheckerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,14 +28,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/StyleChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-486">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="141">
+              <caret line="49" column="73" selection-start-line="49" selection-start-column="73" selection-end-line="49" selection-end-column="73" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#StyleChecker#1;class#StyleChecker#0" />
                 <element signature="method#initDefaultProperties#0;class#StyleChecker#0" />
+                <element signature="method#initSpecificProperties#0;class#StyleChecker#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/bg/sofia/uni/fmi/mjt/stylechecker/StyleCheckerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="133" column="47" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/WildCardImportCheck.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,7 +100,13 @@
         <option value="$PROJECT_DIR$/src/analyzerTypes/LengthOfLineCheck.java" />
         <option value="$PROJECT_DIR$/src/analyzerTypes/OpeningBracketCheck.java" />
         <option value="$PROJECT_DIR$/src/analyzerTypes/StatementsPerLineCheck.java" />
+        <option value="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/LengthOfLineCheck.java" />
+        <option value="$PROJECT_DIR$/StyleCheckerTest.java" />
+        <option value="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/WildCardImportCheck.java" />
         <option value="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/StyleChecker.java" />
+        <option value="$PROJECT_DIR$/test/bg/sofia/uni/fmi/mjt/stylechecker/StyleCheckerTest.java" />
+        <option value="$PROJECT_DIR$/TEST2/Test.java" />
+        <option value="$PROJECT_DIR$/TEST2/TestGrader.java" />
       </list>
     </option>
   </component>
@@ -98,7 +132,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -111,10 +144,28 @@
               <item name="StyleChecker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="StyleChecker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StyleChecker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stylechecker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StyleChecker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StyleChecker" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StyleChecker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StyleChecker" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="stylechecker" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -122,7 +173,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../J-Unit_Testing/J-Unit_Begin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -138,6 +189,9 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="bg.sofia.uni.fmi.mjt.stylechecker" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Java\Java_OOP\StyleChecker\test\bg\sofia\uni\fmi\mjt\stylechecker" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -151,47 +205,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.bg.sofia.uni.fmi.mjt.stylechecker in StyleChecker">
+  <component name="RunManager" selected="JUnit.StyleCheckerTest.testShouldPutWarningCommentForWildCardImport">
     <configuration name="StyleCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StyleChecker" />
-      <option name="PACKAGE_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker" />
-      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker.StyleCheckerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StyleCheckerTest.testDefaultStyleCheckerForLongImports" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StyleChecker" />
-      <option name="PACKAGE_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker" />
-      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker.StyleCheckerTest" />
-      <option name="METHOD_NAME" value="testDefaultStyleCheckerForLongImports" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StyleCheckerTest.testDefaultStyleCheckerIfExceededLineLengthProducesError" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StyleChecker" />
-      <option name="PACKAGE_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker" />
-      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker.StyleCheckerTest" />
-      <option name="METHOD_NAME" value="testDefaultStyleCheckerIfExceededLineLengthProducesError" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StyleCheckerTest.testDefaultStyleCheckerIfMultipleStatementsProduceError" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StyleChecker" />
-      <option name="PACKAGE_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker" />
-      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker.StyleCheckerTest" />
-      <option name="METHOD_NAME" value="testDefaultStyleCheckerIfMultipleStatementsProduceError" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="bg.sofia.uni.fmi.mjt.stylechecker in StyleChecker" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StyleChecker" />
       <extension name="coverage">
         <pattern>
@@ -200,18 +215,75 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker.StyleCheckerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StyleCheckerTest.testShouldNotPutWarning" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StyleChecker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bg.sofia.uni.fmi.mjt.stylechecker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker" />
+      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker.StyleCheckerTest" />
+      <option name="METHOD_NAME" value="testShouldNotPutWarning" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StyleCheckerTest.testShouldPutWarningCommentForWildCardImport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StyleChecker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bg.sofia.uni.fmi.mjt.stylechecker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker" />
+      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker.StyleCheckerTest" />
+      <option name="METHOD_NAME" value="testShouldPutWarningCommentForWildCardImport" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StyleChecker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bg.sofia.uni.fmi.mjt.stylechecker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.stylechecker.Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGrader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StyleChecker" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestGrader" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.bg.sofia.uni.fmi.mjt.stylechecker in StyleChecker" />
+        <item itemvalue="JUnit.StyleCheckerTest.testShouldPutWarningCommentForWildCardImport" />
+        <item itemvalue="JUnit.TestGrader" />
+        <item itemvalue="JUnit.Test" />
         <item itemvalue="JUnit.StyleCheckerTest" />
-        <item itemvalue="JUnit.StyleCheckerTest.testDefaultStyleCheckerIfMultipleStatementsProduceError" />
-        <item itemvalue="JUnit.StyleCheckerTest.testDefaultStyleCheckerForLongImports" />
-        <item itemvalue="JUnit.StyleCheckerTest.testDefaultStyleCheckerIfExceededLineLengthProducesError" />
+        <item itemvalue="JUnit.StyleCheckerTest.testShouldNotPutWarning" />
       </list>
     </recent_temporary>
   </component>
@@ -228,48 +300,51 @@
       <workItem from="1565075847473" duration="1394000" />
       <workItem from="1565077267926" duration="31060000" />
       <workItem from="1565112686953" duration="455000" />
+      <workItem from="1565165283045" duration="22000" />
+      <workItem from="1565165470732" duration="130000" />
+      <workItem from="1565529405357" duration="5075000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="StyleCheckerTest_testDefaultStyleCheckerForLongImports - 2019.08.06 at 20h 19m 59s.xml">
-      <configuration name="StyleCheckerTest.testDefaultStyleCheckerForLongImports" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StyleCheckerTest_testDefaultStyleCheckerForLongImports - 2019.08.06 at 20h 21m 58s.xml">
-      <configuration name="StyleCheckerTest.testDefaultStyleCheckerForLongImports" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StyleCheckerTest_testDefaultStyleCheckerForLongImports - 2019.08.06 at 20h 22m 20s.xml">
-      <configuration name="StyleCheckerTest.testDefaultStyleCheckerForLongImports" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StyleCheckerTest - 2019.08.06 at 20h 22m 24s.xml">
+    <history-entry file="StyleCheckerTest - 2019.08.11 at 17h 24m 04s.xml">
       <configuration name="StyleCheckerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StyleCheckerTest - 2019.08.06 at 20h 22m 33s.xml">
+    <history-entry file="StyleCheckerTest_testShouldNotPutWarning - 2019.08.11 at 17h 24m 22s.xml">
+      <configuration name="StyleCheckerTest.testShouldNotPutWarning" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StyleCheckerTest_testShouldNotPutWarning - 2019.08.11 at 17h 24m 46s.xml">
+      <configuration name="StyleCheckerTest.testShouldNotPutWarning" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StyleCheckerTest_testShouldNotPutWarning - 2019.08.11 at 17h 25m 14s.xml">
+      <configuration name="StyleCheckerTest.testShouldNotPutWarning" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StyleCheckerTest - 2019.08.11 at 17h 26m 23s.xml">
       <configuration name="StyleCheckerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StyleCheckerTest_testDefaultStyleCheckerIfMultipleStatementsProduceError - 2019.08.06 at 20h 22m 40s.xml">
-      <configuration name="StyleCheckerTest.testDefaultStyleCheckerIfMultipleStatementsProduceError" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StyleCheckerTest_testDefaultStyleCheckerIfMultipleStatementsProduceError - 2019.08.06 at 20h 24m 02s.xml">
-      <configuration name="StyleCheckerTest.testDefaultStyleCheckerIfMultipleStatementsProduceError" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StyleCheckerTest - 2019.08.06 at 20h 24m 07s.xml">
+    <history-entry file="StyleCheckerTest - 2019.08.11 at 17h 28m 57s.xml">
       <configuration name="StyleCheckerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StyleCheckerTest - 2019.08.06 at 20h 31m 55s.xml">
+    <history-entry file="StyleCheckerTest - 2019.08.11 at 17h 30m 44s.xml">
       <configuration name="StyleCheckerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="bg_sofia_uni_fmi_mjt_stylechecker_in_StyleChecker - 2019.08.06 at 20h 35m 31s.xml">
-      <configuration name="bg.sofia.uni.fmi.mjt.stylechecker in StyleChecker" configurationId="JUnit" />
+    <history-entry file="StyleCheckerTest - 2019.08.11 at 17h 32m 03s.xml">
+      <configuration name="StyleCheckerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestGrader - 2019.08.11 at 17h 33m 40s.xml">
+      <configuration name="TestGrader" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StyleCheckerTest_testShouldPutWarningCommentForWildCardImport - 2019.08.11 at 17h 41m 28s.xml">
+      <configuration name="StyleCheckerTest.testShouldPutWarningCommentForWildCardImport" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32909000" />
+    <option name="totallyTimeSpent" value="38136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -278,7 +353,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35969663" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39219934" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -337,17 +412,10 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/StyleChecker$StyleCheckerTest.ic" NAME="StyleCheckerTest Coverage Results" MODIFIED="1565091814493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/StyleChecker$StyleCheckerTest.ic" NAME="StyleCheckerTest Coverage Results" MODIFIED="1565530414808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/StyleCheckerTest.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/Properties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="1165" column="23" selection-start-line="1165" selection-start-column="23" selection-end-line="1165" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/junit-platform-console-standalone-1.3.1.jar!/org/junit/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -410,34 +478,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/bg/sofia/uni/fmi/mjt/stylechecker/StyleCheckerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/StatementsPerLineCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-231">
-          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+        <state relative-caret-position="189">
+          <caret line="9" column="55" lean-forward="true" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/AnalyzerType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/LengthOfLineCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#208#209#0" expanded="true" />
-            <element signature="e#245#246#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -452,22 +498,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/StatementsPerLineCheck.java">
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/Properties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="55" lean-forward="true" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+        <state relative-caret-position="1083">
+          <caret line="1309" column="18" selection-start-line="1309" selection-start-column="18" selection-end-line="1309" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/WildCardImportCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="74" lean-forward="true" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#51921#51922#0" expanded="true" />
+            <element signature="e#51956#51957#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -482,13 +519,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/AnalyzerType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="72" lean-forward="true" selection-start-line="6" selection-start-column="72" selection-end-line="6" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/LengthOfLineCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/StyleChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="141">
+          <caret line="49" column="73" selection-start-line="49" selection-start-column="73" selection-end-line="49" selection-end-column="73" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#StyleChecker#1;class#StyleChecker#0" />
             <element signature="method#initDefaultProperties#0;class#StyleChecker#0" />
+            <element signature="method#initSpecificProperties#0;class#StyleChecker#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/WildCardImportCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StyleCheckerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2268">
+          <caret line="168" column="36" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TEST2/TestGrader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/bg/sofia/uni/fmi/mjt/stylechecker/StyleCheckerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="133" column="47" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

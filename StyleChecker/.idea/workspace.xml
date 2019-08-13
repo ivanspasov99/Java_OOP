@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73a8438f-0083-400e-ab0d-13dd290a9e35" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEST2/TestGrader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/StyleChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/StyleChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/AnalyzerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/AnalyzerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/LengthOfLineCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/LengthOfLineCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/OpeningBracketCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/OpeningBracketCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/StatementsPerLineCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/StatementsPerLineCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/WildCardImportCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/WildCardImportCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jetbrains/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jetbrains/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/bg/sofia/uni/fmi/mjt/stylechecker/StyleCheckerTest.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,14 +36,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/bg/sofia/uni/fmi/mjt/stylechecker/StyleCheckerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="236" column="66" selection-start-line="236" selection-start-column="66" selection-end-line="236" selection-end-column="66" />
+            <state relative-caret-position="42">
+              <caret line="160" column="9" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -116,6 +117,7 @@
         <option value="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/StatementsPerLineCheck.java" />
         <option value="$PROJECT_DIR$/src/bg/sofia/uni/fmi/mjt/stylechecker/analyzerTypes/AnalyzerType.java" />
         <option value="$PROJECT_DIR$/test/bg/sofia/uni/fmi/mjt/stylechecker/StyleCheckerTest.java" />
+        <option value="$PROJECT_DIR$/../.gitignore" />
       </list>
     </option>
   </component>
@@ -129,9 +131,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="28" />
-    <option name="y" value="174" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="56" />
+    <option name="y" value="246" />
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -153,30 +155,6 @@
               <item name="StyleChecker" type="b2602c69:ProjectViewProjectNode" />
               <item name="StyleChecker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StyleChecker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StyleChecker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="stylechecker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StyleChecker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StyleChecker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="stylechecker" type="462c0819:PsiDirectoryNode" />
-              <item name="analyzerTypes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StyleChecker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StyleChecker" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StyleChecker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StyleChecker" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="stylechecker" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -329,14 +307,11 @@
       <workItem from="1565529405357" duration="5075000" />
       <workItem from="1565606024416" duration="11255000" />
       <workItem from="1565617796546" duration="2006000" />
-      <workItem from="1565678996545" duration="1658000" />
+      <workItem from="1565678996545" duration="2809000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="StyleCheckerTest - 2019.08.12 at 17h 16m 56s.xml">
-      <configuration name="StyleCheckerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="StyleCheckerTest - 2019.08.12 at 17h 17m 40s.xml">
       <configuration name="StyleCheckerTest" configurationId="JUnit" />
     </history-entry>
@@ -364,15 +339,18 @@
     <history-entry file="StyleCheckerTest - 2019.08.13 at 10h 17m 13s.xml">
       <configuration name="StyleCheckerTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="StyleCheckerTest - 2019.08.13 at 10h 17m 41s.xml">
+      <configuration name="StyleCheckerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53055000" />
+    <option name="totallyTimeSpent" value="54206000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="56" y="246" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18443497" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1860215" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -381,7 +359,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39087301" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39087301" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -602,11 +580,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/bg/sofia/uni/fmi/mjt/stylechecker/StyleCheckerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="236" column="66" selection-start-line="236" selection-start-column="66" selection-end-line="236" selection-end-column="66" />
+        <state relative-caret-position="42">
+          <caret line="160" column="9" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
         </state>
       </provider>
     </entry>

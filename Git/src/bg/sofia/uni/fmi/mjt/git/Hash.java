@@ -4,7 +4,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-class Crypt {
+class Hash {
 
     static String hexDigest(String input) {
         try {

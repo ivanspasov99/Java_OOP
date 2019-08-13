@@ -20,7 +20,7 @@ public class Commit {
     public Commit(String message, Stage stage) {
         this.commitMessage = message;
         this.date = generateDateString();
-        hash = Crypt.hexDigest(date + message);
+        hash = Hash.hexDigest(date + message);
         this.stage = stage;
     }
 

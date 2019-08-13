@@ -16,10 +16,11 @@ public class StyleCheckerTest {
     private static final String OPENING_BRACKET_CHECK = "opening.bracket.check.active";
     private static final boolean DEFAULT_VALUE = true;
     private static String numOfChar;
-    private static final String WildCardMessage = "// FIXME Wildcards are not allowed in import statements\r\n";
-    private static final String StatementsPerLineMessage = "// FIXME Only one statement per line is allowed\r\n";
-    private static final String LengthLineMessage = "// FIXME Length of line should not exceed %s characters\r\n";
-    private static final String OpeningBracketsMessage = "// FIXME Opening brackets should be placed on the same line as the declaration\r\n";
+
+    private static final String WILD_CARD_MESSAGE = "// FIXME Wildcards are not allowed in import statements" + System.lineSeparator() + "";
+    private static final String STATEMENTS_PER_LINE_MESSAGE = "// FIXME Only one statement per line is allowed" + System.lineSeparator() + "";
+    private static final String LENGTH_LINE_MESSAGE = "// FIXME Length of line should not exceed %s characters" + System.lineSeparator() + "";
+    private static final String OPENING_BRACKET_MESSAGE = "// FIXME Opening brackets should be placed on the same line as the declaration" + System.lineSeparator() + "";
 
 
     private static final String LINE_LENGTH_LIMIT = "line.length.limit";
@@ -40,21 +41,20 @@ public class StyleCheckerTest {
         // main configs
         styleChecker = new StyleChecker();
         // we can make file to test or with ByteArray and inline String
-        configPropertiesMixed = new ByteArrayInputStream(("wildcard.import.check.active=true\n" +
-                "statements.per.line.check.active=false\n" +
-                "length.of.line.check.active=true\n" +
-                "opening.bracket.check.active=false\n" +
-                "line.length.limit=60\n").getBytes());
+        configPropertiesMixed = new ByteArrayInputStream(("wildcard.import.check.active=true" + System.lineSeparator() +
+                "statements.per.line.check.active=false" + System.lineSeparator() +
+                "length.of.line.check.active=true" + System.lineSeparator() +
+                "opening.bracket.check.active=false" + System.lineSeparator() +
+                "line.length.limit=60" + System.lineSeparator()).getBytes());
 
         configPartOfProperties = new ByteArrayInputStream(
-                ("statements.per.line.check.active=true\n" +
-                        "length.of.line.check.active=false\n" +
-                        "line.length.limit=10\n").getBytes());
+                ("statements.per.line.check.active=true" + System.lineSeparator() +
+                        "length.of.line.check.active=false" + System.lineSeparator() +
+                        "line.length.limit=10" + System.lineSeparator()).getBytes());
 
-        allPropertiesOff = new ByteArrayInputStream(("wildcard.import.check.active=false\n"
-                + "statements.per.line.check.active=false\n"
-                + "line.length.limit=100\n"
-                + "length.of.line.check.active=false\n"
+        allPropertiesOff = new ByteArrayInputStream(("wildcard.import.check.active=false" + System.lineSeparator()
+                + "statements.per.line.check.active=false" + System.lineSeparator()
+                + "length.of.line.check.active=false" + System.lineSeparator()
                 + "opening.bracket.check.active=false").getBytes());
 
         outputStreamJavaCode = new ByteArrayOutputStream();
@@ -112,12 +112,6 @@ public class StyleCheckerTest {
         assertEquals(60, Integer.parseInt(styleChecker.getProperties().get(LINE_LENGTH_LIMIT).toString()));
     }
 
-    /*
-    @Test(expected = IOException.class)
-     public void testShouldThrowIOException() {
-         styleChecker = new StyleChecker(inputThrowException);
-     }
-     */
     @Test
     public void testShouldOverwritePropertiesEntry() {
         styleChecker = new StyleChecker(configPartOfProperties);
@@ -129,177 +123,308 @@ public class StyleCheckerTest {
     }
 
     @Test
+    public void testShouldOverwriteAllFalsePropertiesEntry() {
+        styleChecker = new StyleChecker(allPropertiesOff);
+        assertFalse(Boolean.parseBoolean(styleChecker.getProperties().get(WILDCARD_IMPORT_CHECK).toString()));
+        assertFalse(Boolean.parseBoolean(styleChecker.getProperties().get(STATEMENTS_PER_LINE_CHECK).toString()));
+        assertFalse(Boolean.parseBoolean(styleChecker.getProperties().get(LENGTH_OF_LINE_CHECK).toString()));
+        assertFalse(Boolean.parseBoolean(styleChecker.getProperties().get(OPENING_BRACKET_CHECK).toString()));
+        assertEquals(100, Integer.parseInt(styleChecker.getProperties().get(LINE_LENGTH_LIMIT).toString()));
+    }
+
+    @Test
     public void testShouldPutWarningCommentForWildCardImport() {
-        String javaCode = "   import     java.util.*;\r\n";
+        String javaCode = "import     java.util.*;";
         InputStream wildCardImport = new ByteArrayInputStream(javaCode.getBytes());
 
         styleChecker = new StyleChecker();
         styleChecker.checkStyle(wildCardImport, outputStreamJavaCode);
 
-        String expected = WildCardMessage + javaCode;
+        String expected = WILD_CARD_MESSAGE + javaCode + System.lineSeparator();
+
+        assertEquals(expected, outputStreamJavaCode.toString());
+    }
+
+    @Test
+    public void testShouldNotPutWarningCommentForWildCardImport() {
+        String javaCode = "import     java.util.*;";
+        InputStream wildCardImport = new ByteArrayInputStream(javaCode.getBytes());
+
+        styleChecker = new StyleChecker(allPropertiesOff);
+        styleChecker.checkStyle(wildCardImport, outputStreamJavaCode);
+
+        String expected = javaCode + System.lineSeparator();
 
         assertEquals(expected, outputStreamJavaCode.toString());
     }
 
     @Test
     public void testShouldPutWarningCommentForStatementPerLine() {
-        String javaCode = "    ivan();;;    do();;    \r\n";
+        String javaCode = "method();;    do();;";
         InputStream statementsPerLine = new ByteArrayInputStream(javaCode.getBytes());
 
         styleChecker = new StyleChecker();
         styleChecker.checkStyle(statementsPerLine, outputStreamJavaCode);
 
-        String expected = StatementsPerLineMessage + javaCode;
+        String expected = STATEMENTS_PER_LINE_MESSAGE + javaCode + System.lineSeparator();
 
         assertEquals(expected, outputStreamJavaCode.toString());
     }
 
     @Test
-    public void testShouldPutWarningCommentForOpeningBracket() {
-        String javaCode = "   {     \r\n";
-        InputStream openingBracket = new ByteArrayInputStream(javaCode.getBytes());
+    public void testShouldNotPutWarningCommentForStatementPerLine() {
+        String javaCode = "ivan();;;    do();;";
+        InputStream statementsPerLine = new ByteArrayInputStream(javaCode.getBytes());
+
+        styleChecker = new StyleChecker(allPropertiesOff);
+        styleChecker.checkStyle(statementsPerLine, outputStreamJavaCode);
+
+        String expected = javaCode + System.lineSeparator();
+
+        assertEquals(expected, outputStreamJavaCode.toString());
+    }
+
+    @Test
+    public void testShouldNotPutWarningCommentForStatementPerLineMultipleSemicolon() {
+        String javaCode = "ivan();;;;;;";
+        InputStream statementsPerLine = new ByteArrayInputStream(javaCode.getBytes());
 
         styleChecker = new StyleChecker();
-        styleChecker.checkStyle(openingBracket, outputStreamJavaCode);
+        styleChecker.checkStyle(statementsPerLine, outputStreamJavaCode);
 
-        String expected = OpeningBracketsMessage + javaCode;
+        String expected = javaCode + System.lineSeparator();
 
         assertEquals(expected, outputStreamJavaCode.toString());
     }
-
     @Test
     public void testShouldPutWarningMessageForLengthLine() {
-        String javaCode = " asdasdasdadasdasdasdasdasdasdasdlpasdkpoasdfp0isjdfpiajspfiajwpfaj9edrfasdadasdasdasdadasdadaaaadadaaadadqweqweqweqeqeqweqweqwe \r\n";
-        InputStream lineLength = new ByteArrayInputStream(javaCode.getBytes());
+        String javaCode = "asdasdasdadasdasdasdasdasdasdasdlpasdkpoasdfp0isjdfpiajspfiajwpfaj9edrfasdadasdasdasdadasdadaaaadadaaadadqweqweqweqeqeqweqweqwe";
+        InputStream byteJavaCode = new ByteArrayInputStream(javaCode.getBytes());
 
         styleChecker = new StyleChecker();
         numOfChar = styleChecker.getProperties().getProperty(StyleProperties.LINE_LENGTH_LIMIT.getCheckName());
 
-        styleChecker.checkStyle(lineLength, outputStreamJavaCode);
+        styleChecker.checkStyle(byteJavaCode, outputStreamJavaCode);
 
-        String expected = String.format(LengthLineMessage, numOfChar) + javaCode;
+        String expected = String.format(LENGTH_LINE_MESSAGE, numOfChar) + javaCode + System.lineSeparator();
 
         assertEquals(expected, outputStreamJavaCode.toString());
     }
 
-    // TEST WITH MIXED STYLE CHECKER INPUT
+    @Test
+    public void testShouldNotPutWarningMessageForLengthLine() {
+        String javaCode = "asdasdasdadasdasdasdasdasdasdasdlpasdkpoasdfp0isjdfpiajspfiajwpfaj9edrfasdadasdasdasdadasdadaaaadadaaadadqweqweqweqeqeqweqweqwe";
+        InputStream byteJavaCode = new ByteArrayInputStream(javaCode.getBytes());
+
+        styleChecker = new StyleChecker(allPropertiesOff);
+        numOfChar = styleChecker.getProperties().getProperty(StyleProperties.LINE_LENGTH_LIMIT.getCheckName());
+
+        styleChecker.checkStyle(byteJavaCode, outputStreamJavaCode);
+
+        String expected = javaCode + System.lineSeparator();
+
+        assertEquals(expected, outputStreamJavaCode.toString());
+    }
+
     @Test
     public void testShouldNotPutWarning() {
-        String javaCode = "ivan++     \r\n" +
-                "    \r\n" +
-                " \r\n" +
-                "ivan++\r\n";
-        InputStream lineLength = new ByteArrayInputStream(javaCode.getBytes());
+        String javaCode = "var++;" + System.lineSeparator() + "var++;";
+        InputStream byteJavaCode = new ByteArrayInputStream(javaCode.getBytes());
 
         styleChecker = new StyleChecker(configPropertiesMixed);
-        styleChecker.checkStyle(lineLength, outputStreamJavaCode);
+        styleChecker.checkStyle(byteJavaCode, outputStreamJavaCode);
 
-        String expected = javaCode;
+        String expected = "var++;" + System.lineSeparator() + "var++;" + System.lineSeparator();
+
+        assertEquals(expected, outputStreamJavaCode.toString());
+    }
+
+    @Test
+    public void testShouldPutWarningForOpeningBracket() {
+        String javaCode = "{";
+
+        InputStream byteJavaCode = new ByteArrayInputStream(javaCode.getBytes());
+
+        styleChecker = new StyleChecker();
+        styleChecker.checkStyle(byteJavaCode, outputStreamJavaCode);
+
+        String expected = OPENING_BRACKET_MESSAGE + javaCode + System.lineSeparator();
+
+        assertEquals(expected, outputStreamJavaCode.toString());
+    }
+
+    @Test
+    public void testShouldNotPutWarningForOpeningBracket() {
+        String javaCode = "{ asdasd" + System.lineSeparator() + "{";
+
+        InputStream byteJavaCode = new ByteArrayInputStream(javaCode.getBytes());
+
+        styleChecker = new StyleChecker(allPropertiesOff);
+        styleChecker.checkStyle(byteJavaCode, outputStreamJavaCode);
+
+        String expected = javaCode + System.lineSeparator();
+
+        assertEquals(expected, outputStreamJavaCode.toString());
+    }
+
+    @Test
+    public void testShouldPutWarningForOpeningBracketWithFakeText() {
+        String javaCode = "{ asdasd";
+
+        InputStream byteJavaCode = new ByteArrayInputStream(javaCode.getBytes());
+
+        styleChecker = new StyleChecker();
+        styleChecker.checkStyle(byteJavaCode, outputStreamJavaCode);
+
+        String expected = OPENING_BRACKET_MESSAGE + javaCode + System.lineSeparator();
 
         assertEquals(expected, outputStreamJavaCode.toString());
     }
 
     @Test
     public void testShouldNotPutStatementsPerLineWarningItIsFalse() {
-        String javaCode = "ivan++; get++;\r\n" +
-                "    \r\n" +
-                " \r\n" +
-                "ivan++\r\n";
-        InputStream lineLength = new ByteArrayInputStream(javaCode.getBytes());
+        String javaCode = "var++; get++;" + System.lineSeparator() + "" +
+                "" + System.lineSeparator() + "" +
+                "" + System.lineSeparator() + "" +
+                "var++";
+        InputStream byteJavaCode = new ByteArrayInputStream(javaCode.getBytes());
 
         styleChecker = new StyleChecker(configPropertiesMixed);
-        styleChecker.checkStyle(lineLength, outputStreamJavaCode);
+        styleChecker.checkStyle(byteJavaCode, outputStreamJavaCode);
 
-        String expected = javaCode;
+        String expected = javaCode + System.lineSeparator();
 
         assertEquals(expected, outputStreamJavaCode.toString());
     }
 
     @Test
     public void testShouldNotPutOpeningBracketWarningItIsFalse() {
-        String javaCode = "ivan++; get++;\r\n" +
-                " { \r\n" +
-                " };\r\n" +
-                "ivan++\r\n";
-        InputStream lineLength = new ByteArrayInputStream(javaCode.getBytes());
+        String javaCode = "var++; get++;" + System.lineSeparator() + "" +
+                "{" + System.lineSeparator() + "" +
+                "};" + System.lineSeparator() + "" +
+                "var++";
+        InputStream byteJavaCode = new ByteArrayInputStream(javaCode.getBytes());
 
         styleChecker = new StyleChecker(configPropertiesMixed);
-        styleChecker.checkStyle(lineLength, outputStreamJavaCode);
+        styleChecker.checkStyle(byteJavaCode, outputStreamJavaCode);
 
-        String expected = javaCode;
+        String expected = javaCode + System.lineSeparator();
 
         assertEquals(expected, outputStreamJavaCode.toString());
     }
 
     @Test
     public void testShouldNotPutLineCheckWarningItItFalse() {
-        String javaCode = "ivan++; get++; asdasdasdasdadasdasdasdasd\r\n" +
-                " { \r\n" +
-                " };\r\n" +
-                "ivan++\r\n";
-        InputStream lineLength = new ByteArrayInputStream(javaCode.getBytes());
+        String javaCode = "var++; get++; asdasdasdasdadasdasdasdasd" + System.lineSeparator() + "" +
+                "{" + System.lineSeparator() + "" +
+                "};" + System.lineSeparator() + "" +
+                "var++";
+        InputStream byteJavaCode = new ByteArrayInputStream(javaCode.getBytes());
 
         styleChecker = new StyleChecker(configPropertiesMixed);
-        styleChecker.checkStyle(lineLength, outputStreamJavaCode);
+        styleChecker.checkStyle(byteJavaCode, outputStreamJavaCode);
 
-        String expected = javaCode;
+        String expected = javaCode + System.lineSeparator();
 
         assertEquals(expected, outputStreamJavaCode.toString());
     }
+
     @Test
-    public void testShouldPutMiltipleLineLengthCheckWarning() {
-        InputStream onlyLineCheckTrue = new ByteArrayInputStream(("wildcard.import.check.active=false\n" +
-                "statements.per.line.check.active=false\n" +
-                "length.of.line.check.active=true\n" +
-                "opening.bracket.check.active=false\n" +
-                "line.length.limit=10\n").getBytes());
+    public void testShouldPutMultipleLineLengthCheckWarning() {
+        InputStream onlyLineCheckTrue = new ByteArrayInputStream(("wildcard.import.check.active=false" + System.lineSeparator() +
+                "statements.per.line.check.active=false" + System.lineSeparator() +
+                "length.of.line.check.active=true" + System.lineSeparator() +
+                "opening.bracket.check.active=false" + System.lineSeparator() +
+                "line.length.limit=10" + System.lineSeparator()).getBytes());
 
         styleChecker = new StyleChecker(onlyLineCheckTrue);
         numOfChar = styleChecker.getProperties().getProperty(StyleProperties.LINE_LENGTH_LIMIT.getCheckName());
 
-        String javaCode = "ivan++; get++; asdasdasdasdadasdasdasdasd\n" +
-                " {\n" +
-                " };\n" +
-                "ivan++\n" +
-                "import.*****************************\n"+
-                "*+\n";
+        // not valid import statement
+        String javaCode = "ivan++; get++; asdasdasdasdadasdasdasdasd" + System.lineSeparator() +
+                "{" + System.lineSeparator() +
+                "};" + System.lineSeparator() +
+                "ivan++" + System.lineSeparator() +
+                "import.*****************************" + System.lineSeparator() +
+                "*+";
 
-        String expected = String.format(LengthLineMessage, numOfChar) + "ivan++; get++; asdasdasdasdadasdasdasdasd\r\n" +
-                " {\r\n" +
-                " };\r\n" +
-                "ivan++\r\n" +
-                "import.*****************************\r\n"+
-                "*+\r\n";
+        String expected = String.format(LENGTH_LINE_MESSAGE, numOfChar) + "ivan++; get++; asdasdasdasdadasdasdasdasd" + System.lineSeparator() + "" +
+                "{" + System.lineSeparator() + "" +
+                "};" + System.lineSeparator() + "" +
+                "ivan++" + System.lineSeparator() + "" + String.format(LENGTH_LINE_MESSAGE, numOfChar) +
+                "import.*****************************" + System.lineSeparator() +
+                "*+" + System.lineSeparator();
 
-        InputStream lineLength = new ByteArrayInputStream(javaCode.getBytes());
+        InputStream byteJavaCode = new ByteArrayInputStream(javaCode.getBytes());
 
-        styleChecker.checkStyle(lineLength, outputStreamJavaCode);
+        styleChecker.checkStyle(byteJavaCode, outputStreamJavaCode);
 
         assertEquals(expected, outputStreamJavaCode.toString());
     }
+
     @Test
     public void testShouldNotPutAnyWarning() {
         styleChecker = new StyleChecker(allPropertiesOff);
         numOfChar = styleChecker.getProperties().getProperty(StyleProperties.LINE_LENGTH_LIMIT.getCheckName());
 
-        String javaCode = "ivan++; get++; asdasdasdasdadasdasdasdasd\n" +
-                " {\n" +
-                " };\n" +
-                "ivan++\n" +
-                "import.*****************************\n" +
-                "*+\n";
+        String javaCode = "ivan++; get++; asdasdasdasdadasdasdasdasd" + System.lineSeparator() +
+                "{" + System.lineSeparator() +
+                "};" + System.lineSeparator() +
+                "ivan++" + System.lineSeparator() +
+                "import.*****************************" + System.lineSeparator() +
+                "*+";
 
-        String expected = "ivan++; get++; asdasdasdasdadasdasdasdasd\r\n" +
-                " {\r\n" +
-                " };\r\n" +
-                "ivan++\r\n" +
-                "import.*****************************\r\n" +
-                "*+\r\n";
+        String expected = "ivan++; get++; asdasdasdasdadasdasdasdasd" + System.lineSeparator() + "" +
+                "{" + System.lineSeparator() + "" +
+                "};" + System.lineSeparator() + "" +
+                "ivan++" + System.lineSeparator() + "" +
+                "import.*****************************" + System.lineSeparator() + "" +
+                "*+" + System.lineSeparator();
 
-        InputStream lineLength = new ByteArrayInputStream(javaCode.getBytes());
+        InputStream byteJavaCode = new ByteArrayInputStream(javaCode.getBytes());
 
-        styleChecker.checkStyle(lineLength, outputStreamJavaCode);
+        styleChecker.checkStyle(byteJavaCode, outputStreamJavaCode);
 
         assertEquals(expected, outputStreamJavaCode.toString());
+    }
+
+    @Test
+    public void testShouldReturnEmptyString() {
+        styleChecker = new StyleChecker(allPropertiesOff);
+        numOfChar = styleChecker.getProperties().getProperty(StyleProperties.LINE_LENGTH_LIMIT.getCheckName());
+
+        String javaCode = "";
+        String expected = javaCode;
+
+
+        InputStream byteJavaCode = new ByteArrayInputStream(javaCode.getBytes());
+
+        styleChecker.checkStyle(byteJavaCode, outputStreamJavaCode);
+
+        assertEquals(expected, outputStreamJavaCode.toString());
+    }
+
+    @Test
+    public void testShouldPutTwoWarningOnLine() {
+        styleChecker = new StyleChecker();
+        numOfChar = styleChecker.getProperties().getProperty(StyleProperties.LINE_LENGTH_LIMIT.getCheckName());
+
+        String javaCode = "sayHello();sayHello();sayHello();sayHello();sayHello();sayHello();sayHello();sayHello();sayHello();sayHello();sayHello()";
+        String expected = STATEMENTS_PER_LINE_MESSAGE + String.format(LENGTH_LINE_MESSAGE, numOfChar) + javaCode + System.lineSeparator();
+
+        InputStream byteJavaCode = new ByteArrayInputStream(javaCode.getBytes());
+
+        styleChecker.checkStyle(byteJavaCode, outputStreamJavaCode);
+
+        assertEquals(expected, outputStreamJavaCode.toString());
+    }
+
+    @Test(expected = IOException.class)
+    public void testShouldThrowException() throws IOException {
+        // File tempFile = File.createTempFile("fileNotFound", "txt");
+        final InputStream fileNotFoundInput = new FileInputStream("fileNotFound");
+        final OutputStream fileNotFoundOutput = new FileOutputStream("OutputNotFound");
+        styleChecker = new StyleChecker(fileNotFoundInput);
+        styleChecker.checkStyle(fileNotFoundInput, fileNotFoundOutput);
     }
 }

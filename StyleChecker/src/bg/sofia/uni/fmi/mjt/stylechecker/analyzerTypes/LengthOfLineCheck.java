@@ -1,6 +1,5 @@
 package bg.sofia.uni.fmi.mjt.stylechecker.analyzerTypes;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
 
 public class LengthOfLineCheck implements AnalyzerType {
@@ -11,9 +10,9 @@ public class LengthOfLineCheck implements AnalyzerType {
     }
 
     @Override
-    public void analyze(String line, BufferedWriter output) throws IOException {
-        if (!line.contains("import") && line.trim().length() > MAX_LENGTH) {
-            output.append("// FIXME Length of line should not exceed " + MAX_LENGTH + " characters\r\n");
+    public void analyze(String line, StringBuilder outputString) throws IOException {
+        if (!line.trim().startsWith("import ") && line.trim().length() >= MAX_LENGTH) {
+            outputString.append("// FIXME Length of line should not exceed " + MAX_LENGTH + " characters" + System.lineSeparator());
         }
     }
 }

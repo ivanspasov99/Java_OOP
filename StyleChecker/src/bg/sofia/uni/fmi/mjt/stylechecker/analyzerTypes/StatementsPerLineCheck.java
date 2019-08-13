@@ -4,10 +4,12 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 
 public class StatementsPerLineCheck implements AnalyzerType {
+    // depends on what "valid input" is.
     @Override
-    public void analyze(String line, BufferedWriter output) throws IOException {
+    public void analyze(String line, StringBuilder outputString) throws IOException {
+
         if (line.trim().split(";").length > 1) {
-            output.append("// FIXME Only one statement per line is allowed\r\n");
+             outputString.append("// FIXME Only one statement per line is allowed" + System.lineSeparator());
         }
     }
 }

@@ -45,31 +45,31 @@ public class StyleChecker {
              BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(output))) {
 
             String line;
+            StringBuilder outputString = new StringBuilder();
             while ((line = bufferedReader.readLine()) != null) {
-                if (line.trim().equals("")) {
-                    bufferedWriter.append(line + System.lineSeparator());
-                    continue;
+                if (!line.trim().equals("")) {
+                    if (isPropertySet(StyleProperties.WILDCARD_IMPORT.getCheckName())) {
+                        analyzerTypeMap.get(StyleProperties.WILDCARD_IMPORT.getCheckName()).analyze(line, outputString);
+                    }
+                    if (isPropertySet(StyleProperties.STATEMENTS_PER_LINE.getCheckName())) {
+                        analyzerTypeMap.get(StyleProperties.STATEMENTS_PER_LINE.getCheckName()).analyze(line, outputString);
+                    }
+                    if (isPropertySet(StyleProperties.OPENING_BRACKET.getCheckName())) {
+                        analyzerTypeMap.get(StyleProperties.OPENING_BRACKET.getCheckName()).analyze(line, outputString);
+                    }
+                    if (isPropertySet(StyleProperties.LENGTH_OF_LINE.getCheckName())) {
+                        LengthOfLineCheck tempLine = (LengthOfLineCheck) analyzerTypeMap.get(StyleProperties.LENGTH_OF_LINE.getCheckName());
+                        tempLine.setMaxLength(Integer.parseInt(properties.getProperty(StyleProperties.LINE_LENGTH_LIMIT.getCheckName())));
+                        tempLine.analyze(line, outputString);
+                    }
                 }
-                if (isPropertySet(StyleProperties.WILDCARD_IMPORT.getCheckName())) {
-                    analyzerTypeMap.get(StyleProperties.WILDCARD_IMPORT.getCheckName()).analyze(line, bufferedWriter);
-                }
-                if (isPropertySet(StyleProperties.STATEMENTS_PER_LINE.getCheckName())) {
-                    analyzerTypeMap.get(StyleProperties.STATEMENTS_PER_LINE.getCheckName()).analyze(line, bufferedWriter);
-                }
-                if (isPropertySet(StyleProperties.OPENING_BRACKET.getCheckName())) {
-                    analyzerTypeMap.get(StyleProperties.OPENING_BRACKET.getCheckName()).analyze(line, bufferedWriter);
-                }
-                if (isPropertySet(StyleProperties.LENGTH_OF_LINE.getCheckName())) {
-                    LengthOfLineCheck tempLine = (LengthOfLineCheck) analyzerTypeMap.get(StyleProperties.LENGTH_OF_LINE.getCheckName());
-                    tempLine.setMaxLength(Integer.parseInt(properties.getProperty(StyleProperties.LINE_LENGTH_LIMIT.getCheckName())));
-                    tempLine.analyze(line, bufferedWriter);
-                }
-                bufferedWriter.append(line + System.lineSeparator());
-
+                outputString.append(line + System.lineSeparator());
             }
+            // trim leading и trailing whitespace
+            bufferedWriter.append(outputString.toString());
 
-        } catch (IOException e) {
-            System.out.println("invalid file");
+        } catch (IOException ioExc) {
+            throw new RuntimeException("Error occurred while checking style", ioExc);
         }
     }
 

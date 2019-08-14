@@ -11,7 +11,6 @@ public class MoviesExplorer {
     private ArrayList<Movie> movieList = new ArrayList<>();
 
     public MoviesExplorer(InputStream dataInput) {
-        // throw new UnsupportedOperationException("Method not yet implemented");
         String line;
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(dataInput))) {
             while ((line = bufferedReader.readLine()) != null) {
@@ -27,6 +26,8 @@ public class MoviesExplorer {
     }
 
     public int countMoviesReleasedIn(int year) {
+        // count returns long
+        // not in favour of casting to int?????
         return (int) movieList.stream().filter((movie -> movie.getYear() == year)).count();
     }
 
@@ -39,16 +40,18 @@ public class MoviesExplorer {
     }
 
     public Collection<Actor> getAllActors() {
-        // if no movies?
         return movieList.stream().flatMap(movie -> movie.getActors().stream()).collect(Collectors.toSet());
     }
 
     public int getFirstYear() {
-        // if present
+        // movie(s) released earliest
+        // movieList is never empty
         return movieList.stream().mapToInt(Movie::getYear).min().getAsInt();
+
     }
 
     public Collection<Movie> getAllMoviesBy(Actor actor) {
+        // if no movies: return empty collection
         return movieList.stream().filter(movie -> movie.getActors().contains(actor)).collect(Collectors.toList());
     }
 

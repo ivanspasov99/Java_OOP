@@ -15,6 +15,7 @@ public class Actor {
     }
     @Override
     public boolean equals(Object obj) {
+        // that is untyped collection: ArrayList<> nonTypedArray = new ArrayList<>(); (not good to use)
         Actor actor = (Actor) obj;
         return firstName.equals(actor.firstName) && lastName.equals(actor.lastName);
     }

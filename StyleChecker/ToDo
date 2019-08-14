@@ -1,0 +1,4 @@
+** HINTS **
+- make analyzer return error type, not modifying output
+- get errorCheckSet for properties only that are with value = "true", otherwise we are checking useless things
+- we could delete propertiesMap and add files in Enum class, as well as methods to get these fields 

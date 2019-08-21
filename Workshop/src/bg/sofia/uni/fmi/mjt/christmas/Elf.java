@@ -2,24 +2,24 @@ package bg.sofia.uni.fmi.mjt.christmas;
 
 public class Elf extends Thread {
     private int id;
-    private WorkShop workShop;
+    private WorksShop worksShop;
     private int giftsMade;
 
-    public Elf(int id, WorkShop workShop) {
+    public Elf(int id, WorksShop worksShop) {
         this.id = id;
-        this.workShop = workShop;
+        this.worksShop = worksShop;
         this.giftsMade = 0;
     }
 
     public void craftWish() {
         try {
-            Gift gift = workShop.nextGift();
+            Gift gift = worksShop.nextGift();
             // could happen on Christmas time
             if (gift == null) {
                 return;
             }
             Thread.sleep(gift.getCraftTime());
-            workShop.addFinishedGiftForDelivery(gift);
+            worksShop.addFinishedGiftForDelivery(gift);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -32,7 +32,7 @@ public class Elf extends Thread {
 
     @Override
     public void run() {
-        while (workShop.getBackLogSize() != 0 || !workShop.isChristmasTime()) {
+        while (worksShop.getBackLogSize() != 0 || !worksShop.isChristmasTime()) {
             craftWish();
         }
     }

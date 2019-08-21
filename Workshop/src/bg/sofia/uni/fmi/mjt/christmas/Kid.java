@@ -1,11 +1,11 @@
 package bg.sofia.uni.fmi.mjt.christmas;
 
 public class Kid extends Thread {
-    private WorkShop workShop;
+    private WorksShop worksShop;
     private static final int TIME_TO_CHOOSE_GIFT = 1000;
 
-    public Kid(WorkShop workShop) {
-        this.workShop = workShop;
+    public Kid(WorksShop worksShop) {
+        this.worksShop = worksShop;
     }
 
     public void makeWish(Gift gift) {
@@ -14,7 +14,7 @@ public class Kid extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        workShop.postWish(gift);
+        worksShop.postWish(gift);
     }
 
     @Override

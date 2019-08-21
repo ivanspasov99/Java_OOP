@@ -1,6 +1,6 @@
 import bg.sofia.uni.fmi.mjt.christmas.Elf;
 import bg.sofia.uni.fmi.mjt.christmas.Kid;
-import bg.sofia.uni.fmi.mjt.christmas.WorkShop;
+import bg.sofia.uni.fmi.mjt.christmas.WorksShop;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,22 +9,22 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class WorkShopTest {
+public class WorksShopTest {
     private static final int ELVES_NUMBER = 20;
-    private static WorkShop workShop;
+    private static WorksShop worksShop;
 
     @Before
     public void setUp() {
-        workShop = new WorkShop();
+        worksShop = new WorksShop();
     }
     // with THREAD -> KID CLASS TESTING
     @Test
     public void testShouldGetCorrectSingleThreadWish() throws InterruptedException {
-        Thread kid = new Thread(new Kid(workShop));
+        Thread kid = new Thread(new Kid(worksShop));
         kid.start();
         kid.join();
 
-        assertEquals(1, workShop.getWishCount());
+        assertEquals(1, worksShop.getWishCount());
     }
     @Test
     public void testShouldGetOneReadyGift() throws InterruptedException {
@@ -32,21 +32,21 @@ public class WorkShopTest {
         List<Thread> kidList = new ArrayList<>();
 
         for (int i = 0; i < KIDS_CREATED; i++) {
-            kidList.add(new Thread(new Kid(workShop), "KID"));
+            kidList.add(new Thread(new Kid(worksShop), "KID"));
         }
 
         kidList.forEach(Thread::start);
         for (int i = 0; i < KIDS_CREATED; i++) {
             kidList.get(i).join();
         }
-        workShop.setChristmasTimeOn();
-        Elf[] elves = workShop.getElves();
+        worksShop.setChristmasTimeOn();
+        Elf[] elves = worksShop.getElves();
         for (int i = 0; i < ELVES_NUMBER; i++) {
             elves[i].join();
         }
 
-        assertEquals(KIDS_CREATED, workShop.getWishCount());
-        assertEquals(KIDS_CREATED, workShop.getGiftsForDelivery());
+        assertEquals(KIDS_CREATED, worksShop.getWishCount());
+        assertEquals(KIDS_CREATED, worksShop.getGiftsForDelivery());
     }
     @Test
     public void testShouldGetMultipleReadyGifts() throws InterruptedException {
@@ -54,20 +54,20 @@ public class WorkShopTest {
         List<Thread> kidList = new ArrayList<>();
 
         for (int i = 0; i < KIDS_CREATED; i++) {
-            kidList.add(new Thread(new Kid(workShop), "KID"));
+            kidList.add(new Thread(new Kid(worksShop), "KID"));
         }
 
         kidList.forEach(Thread::start);
         for (int i = 0; i < KIDS_CREATED; i++) {
             kidList.get(i).join();
         }
-        workShop.setChristmasTimeOn();
-        Elf[] elves = workShop.getElves();
+        worksShop.setChristmasTimeOn();
+        Elf[] elves = worksShop.getElves();
         for (int i = 0; i < ELVES_NUMBER; i++) {
             elves[i].join();
         }
         // 1 is remaining because santa is getting 100 each time (when reached)
-        assertEquals(KIDS_CREATED, workShop.getWishCount());
-        assertEquals(1, workShop.getGiftsForDelivery());
+        assertEquals(KIDS_CREATED, worksShop.getWishCount());
+        assertEquals(1, worksShop.getGiftsForDelivery());
     }
 }

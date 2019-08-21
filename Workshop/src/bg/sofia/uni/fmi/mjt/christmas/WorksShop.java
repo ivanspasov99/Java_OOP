@@ -4,7 +4,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class WorkShop {
+public class WorksShop {
     private static final int ELVES_NUMBER = 20;
     private Elf[] elves = new Elf[ELVES_NUMBER];
 
@@ -15,7 +15,7 @@ public class WorkShop {
     private ArrayBlockingQueue<Gift> giftsForDelivery;
     private AtomicInteger wishCount; // could be volatile
 
-    public WorkShop() {
+    public WorksShop() {
         backLog = new LinkedBlockingQueue<>();
         giftsForDelivery = new ArrayBlockingQueue<>(100);
         wishCount = new AtomicInteger(0);

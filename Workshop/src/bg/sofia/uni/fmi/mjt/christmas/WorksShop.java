@@ -6,19 +6,20 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class WorksShop {
     private static final int ELVES_NUMBER = 20;
+    private static final int MAX_SIZE_SANTA_CART = 100;
+    private static final int WISH_INIT_VALUE = 0;
     private Elf[] elves = new Elf[ELVES_NUMBER];
 
 
     private volatile boolean isChristmasTime = false; // with synch
-    // good use for Producer Consumer design
-    private LinkedBlockingQueue<Gift> backLog;
+    private LinkedBlockingQueue<Gift> backLog;  // good use for Producer-Consumer(Pattern) design
     private ArrayBlockingQueue<Gift> giftsForDelivery;
     private AtomicInteger wishCount; // could be volatile
 
     public WorksShop() {
         backLog = new LinkedBlockingQueue<>();
-        giftsForDelivery = new ArrayBlockingQueue<>(100);
-        wishCount = new AtomicInteger(0);
+        giftsForDelivery = new ArrayBlockingQueue<>(MAX_SIZE_SANTA_CART);
+        wishCount = new AtomicInteger(WISH_INIT_VALUE);
         initElves();
     }
 

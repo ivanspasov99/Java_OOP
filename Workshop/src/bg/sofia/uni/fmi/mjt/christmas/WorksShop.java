@@ -19,23 +19,16 @@ public class WorksShop {
         backLog = new LinkedBlockingQueue<>();
         giftsForDelivery = new ArrayBlockingQueue<>(100);
         wishCount = new AtomicInteger(0);
-
-        // elves Threads, starting to work
-        for (int i = 0; i < ELVES_NUMBER; i++) {
-            elves[i] = new Elf(i, this);
-            elves[i].start();
-        }
-        // they are going to execute run method until Christmas time (another Thread will track)
-        // they will wait if no gift in backLog
+        initElves();
     }
 
     public void postWish(Gift gift) {
         // put() works with wait() when queue is full
         synchronized (backLog) {
             backLog.offer(gift); // backlog capacity is infinity(for the task)
-            wishCount.incrementAndGet(); // i do not want to get value
             backLog.notify();
         }
+        wishCount.incrementAndGet();
     }
 
     public Gift nextGift() {
@@ -91,5 +84,12 @@ public class WorksShop {
 
     public boolean isChristmasTime() {
         return this.isChristmasTime;
+    }
+
+    private void initElves() {
+        for (int i = 0; i < ELVES_NUMBER; i++) {
+            elves[i] = new Elf(i, this);
+            elves[i].start();
+        }
     }
 }

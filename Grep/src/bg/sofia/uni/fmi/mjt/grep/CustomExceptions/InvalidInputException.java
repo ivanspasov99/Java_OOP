@@ -1,4 +1,4 @@
 package bg.sofia.uni.fmi.mjt.grep.CustomExceptions;
 
-public class NoWordFound extends Throwable {
+public class InvalidInputException extends Throwable {
 }

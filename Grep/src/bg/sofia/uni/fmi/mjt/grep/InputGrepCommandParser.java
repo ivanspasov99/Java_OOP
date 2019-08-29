@@ -1,54 +1,66 @@
 package bg.sofia.uni.fmi.mjt.grep;
 
-import bg.sofia.uni.fmi.mjt.grep.CustomExceptions.NoDirecrotyFound;
-import bg.sofia.uni.fmi.mjt.grep.CustomExceptions.NoWordFound;
+import bg.sofia.uni.fmi.mjt.grep.CustomExceptions.InvalidInputException;
+
+import java.util.*;
 
 class InputGrepCommandParser {
-    private static boolean fullWords;
-    private static boolean caseSensitive;
+    // could add OptionsList and traverse it to check for possible options
+    private ArrayList<String> list;
 
-    InputGrepCommandParser(boolean fullWords, boolean caseSensitive) {
-        this.fullWords = fullWords;
-        this.caseSensitive = caseSensitive;
+    InputGrepCommandParser(String[] input) {
+        final int COMMAND_POSITION = 0;
+        list = new ArrayList<>(Arrays.asList(input));
+        list.remove(COMMAND_POSITION);
     }
 
-    String getWord(String[] input) throws NoWordFound {
-        // depending if specific command is invoked
-        final int WORD_POSITION = (fullWords || caseSensitive) ? 2 : 1;
+    String getWord() throws InvalidInputException {
+        return getNextString();
+    }
 
-        // checking for no word scenario
-        if (input[WORD_POSITION].startsWith("/")) {
-            throw new NoWordFound();
+    String getDirectory() throws InvalidInputException {
+        return getNextString();
+    }
+
+    Map<String, Boolean> getOptions() {
+        Map<String, Boolean> optionMap = new HashMap<>();
+        if (list.remove("-wi") || list.remove("-iw")) {
+            optionMap.put("i", true);
+            optionMap.put("w", true);
+            return optionMap;
         }
-        return input[WORD_POSITION];
-    }
-
-    String getDirectory(String[] input) throws NoDirecrotyFound {
-        // is it possible to start without /??
-        final int DIRECTORY_POSITION = (fullWords || caseSensitive) ? 3 : 2;
-
-        if (!input[DIRECTORY_POSITION].startsWith("/")) {
-            throw new NoDirecrotyFound();
+        if (list.remove("-i")) {
+            optionMap.put("i", true);
         }
-        return input[DIRECTORY_POSITION];
-    }
-
-    String getOutputFilePath(String[] input) throws NoDirecrotyFound {
-        final int OPTIONAL_FILE_PATH_POSITION = (fullWords || caseSensitive) ? 5 : 4;
-        if (input.length > OPTIONAL_FILE_PATH_POSITION) {
-            return input[OPTIONAL_FILE_PATH_POSITION];
+        if (list.remove("-w")) {
+            optionMap.put("w", true);
         }
-        return "";
+        return optionMap;
     }
 
-    int getThreads(String[] input) throws NoThreadNumberException {
-        final int THREAD_POSITION = (fullWords || caseSensitive) ? 4 : 3;
-
+    int getThreadNumber() throws InvalidInputException {
+        final int threads;
         try {
-            return Integer.parseInt(input[THREAD_POSITION]);
+            threads = Integer.parseInt(getNextString());
         } catch (NumberFormatException e) {
-            throw new NoThreadNumberException();
+            throw new InvalidInputException();
         }
+        return threads;
     }
 
+    String getOutPutFilePath() throws InvalidInputException {
+        if (!list.isEmpty()) {
+            getNextString();
+        }
+        return null;
+    }
+
+    private String getNextString() throws InvalidInputException {
+        Optional<String> string = list.stream().findFirst();
+        if (!string.isPresent()) {
+            throw new InvalidInputException();
+        }
+        list.remove(string.get());
+        return string.get();
+    }
 }

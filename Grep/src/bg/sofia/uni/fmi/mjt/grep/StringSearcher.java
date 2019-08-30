@@ -8,10 +8,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
@@ -72,10 +69,13 @@ public class StringSearcher {
         List<String> futures = new ArrayList<>();
 
         for (Path path : filesPathList) {
-            FileThread fileThread = new FileThread(path.toString(), this.word);
+            FileThread fileThread = new FileThread(path.toString(), this.word, OPTION_MAP);
             Future<String> future = executor.submit(fileThread);
             try {
-                futures.add(future.get());
+                if (!(future.get().isEmpty())) {
+                    List<String> oneThreadWordMatches = Arrays.asList(future.get().split(System.lineSeparator()));
+                    futures.addAll(oneThreadWordMatches);
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -95,6 +95,8 @@ public class StringSearcher {
         if (!scanner.hasNext()) {
             throw new EmptyFileException();
         }
-        return scanner.nextLine();
+        String temp = scanner.nextLine();
+        scanner.close();
+        return temp;
     }
 }

@@ -5,13 +5,13 @@ import java.util.*;
 import java.util.concurrent.Callable;
 // callable is used when you want to return result form thread
 public class FileThread implements Callable<String> {
-    private final String filePath;
-    private final String word;
-    private Map<String, Boolean> OPTION_MAP;
+    private final String FILE_PATH;
+    private final String WORD;
+    private final Map<String, Boolean> OPTION_MAP;
 
-    public FileThread(String filePath, String word, Map<String, Boolean> OPTION_MAP) {
-        this.filePath = filePath;
-        this.word = word;
+    public FileThread(String FILE_PATH, String word, Map<String, Boolean> OPTION_MAP) {
+        this.FILE_PATH = FILE_PATH;
+        this.WORD = word;
         this.OPTION_MAP = OPTION_MAP;
     }
 
@@ -21,13 +21,13 @@ public class FileThread implements Callable<String> {
 
         int lineCounter = 0;
         try {
-            try(BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
+            try(BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE_PATH))) {
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
                     lineCounter++;
 
                     if(optionsChecking(line)) {
-                        matches.add(filePath + ": " + lineCounter + ": " + word);
+                        matches.add(FILE_PATH + ": " + lineCounter + ": " + WORD);
                     }
                 }
             }
@@ -39,7 +39,7 @@ public class FileThread implements Callable<String> {
     }
 
     private boolean optionsChecking(String line) {
-        String tempWord = word;
+        String tempWord = WORD;
         if(OPTION_MAP.isEmpty()) {
             return line.contains(tempWord);
         }

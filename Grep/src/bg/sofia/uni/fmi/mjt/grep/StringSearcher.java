@@ -38,8 +38,11 @@ public class StringSearcher {
         inputCommandValidator.validateRequiredCommand(input);
 
         inputGrepCommandParser = new InputGrepCommandParser(input.split(" "));
-        this.OPTION_MAP = inputGrepCommandParser.getOptions();
 
+
+        // We can encapsulate all of these operations in InputCommandParser and return Map with appropriate values, directly from
+        // let's say function getCommandData().
+        this.OPTION_MAP = inputGrepCommandParser.getOptions();
         this.word = inputGrepCommandParser.getWord();
         this.folderPath = inputGrepCommandParser.getDirectory();
         this.executor = Executors.newFixedThreadPool(inputGrepCommandParser.getThreadNumber());

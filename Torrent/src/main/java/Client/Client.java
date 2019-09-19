@@ -6,17 +6,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
-import java.net.SocketAddress;
+import java.net.NetworkInterface;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
-import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 // addons:
 // 1 - make function for input different kind of data
@@ -29,11 +26,10 @@ public class Client {
     private final static int USERNAME_POSITION = 1;
     private final static int FILE_TO_DOWNLOAD = 2;
     private final static int PATH_TO_DOWNLOAD = 3;
-    private final static int IP_ADDRESS_POSITION = 0;
 
     private final static int CONNECTED_CLIENT_USERNAME = 0;
     private final static int CONNECTED_CLIENT_CONNECTION_INFO = 1;
-    private final static int CONNECTED_CLIENT_IP = 1;
+    private final static int CONNECTED_CLIENT_IP = 0;
     private final static int CONNECTED_CLIENT_PORT = 1;
 
 
@@ -91,7 +87,8 @@ public class Client {
     }
 
     // for test purposes is it better function return type to be String
-    private void run() throws FileNotFoundException, IOException {
+    private void run() throws ArrayIndexOutOfBoundsException, IOException {
+
         selector = Selector.open();
         mainServerHost = enterMainSeverHost();
         configMainSocketChannel(mainServerHost);
@@ -113,7 +110,6 @@ public class Client {
             switch (tokens[COMMAND_POSITION]) {
                 case "download": {
                     File fileToDownload = new File(tokens[FILE_TO_DOWNLOAD]);
-
                     String userDownloadFrom = tokens[USER_DOWNLOAD_FROM_POSITION];
                     String pathToDownload = tokens[PATH_TO_DOWNLOAD];
 
@@ -197,13 +193,8 @@ public class Client {
     }
 
     private Map<String, String> getOnlineUserInfo() throws IOException {
-        //try {
-            availableClients.readClientsFromServer();
-            // must join, not sure if it is always faster
-           //availableClients.join(GET_AVAILABLE_CLIENTS_ESTIMATE_TIME);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+
+        availableClients.readClientsFromServer();
         Map<String, String> onlineUserInfo = new HashMap<>();
 
         String clients = availableClients.getOnlineClients();
@@ -236,9 +227,22 @@ public class Client {
     }
 
     private String getMiniServerHost() throws IOException {
-        // list all IP-s and make user choose one of them
-        SocketAddress socketAddress = mainSocketChannel.getLocalAddress();
-        return socketAddress.toString().replace("/", "").split(":")[IP_ADDRESS_POSITION];
+        System.out.println("Please choose your IP-HOST: ");
+        Enumeration en = NetworkInterface.getNetworkInterfaces();
+        while(en.hasMoreElements())
+        {
+            NetworkInterface n = (NetworkInterface) en.nextElement();
+            Enumeration ee = n.getInetAddresses();
+            while (ee.hasMoreElements())
+            {
+                InetAddress i = (InetAddress) ee.nextElement();
+                System.out.println(i.getHostAddress());
+            }
+        }
+        Scanner scanner = new Scanner(System.in);
+        String ip = scanner.nextLine();
+
+        return ip;
     }
 
     private void configMiniServer() {
@@ -272,8 +276,8 @@ public class Client {
 
             // final values
             // literal values change with static final values
-            String ip = onlineUserInfo.get(userName).split(":")[0];
-            int port = Integer.parseInt(onlineUserInfo.get(userName).split(":")[1]);
+            String ip = onlineUserInfo.get(userName).split(":")[CONNECTED_CLIENT_IP];
+            int port = Integer.parseInt(onlineUserInfo.get(userName).split(":")[CONNECTED_CLIENT_PORT]);
             peerToPeerChannel = SocketChannel.open(new InetSocketAddress(ip, port));
             peerToPeerChannel.configureBlocking(false); // !!! could be BLOCKING
             return peerToPeerChannel;

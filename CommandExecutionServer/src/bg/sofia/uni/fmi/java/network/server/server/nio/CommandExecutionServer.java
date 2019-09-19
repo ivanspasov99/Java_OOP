@@ -35,7 +35,7 @@ public class CommandExecutionServer implements AutoCloseable {
         // server channel config
         ssc = ServerSocketChannel.open();
         ssc.socket().bind(new InetSocketAddress(port));
-        ssc.configureBlocking(false); // to support more than one channel???
+        ssc.configureBlocking(false);
         // it need to be registered because it is waiting for connection
         // when it sees that connection is OP_CONNECT, it accept it and it making specific channel to communicate on with
     }
@@ -110,7 +110,7 @@ public class CommandExecutionServer implements AutoCloseable {
         SocketChannel socketChannel = (SocketChannel) key.channel();
 
         try {
-            commandBuffer.clear(); // useless
+            commandBuffer.clear();
             // reading what user send
             int r = socketChannel.read(commandBuffer); // request
             if (r == -1) {
